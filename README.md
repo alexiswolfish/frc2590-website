@@ -5,16 +5,22 @@ A website for Nemesis Robotics
 
 ***
 Repository Setup::
+
 	htmlMockups
+	
 		Contains fully functional HTML mockups ready to be ported over to php Templates
 		for the server. When you clone the repository, you should be able to open any
 		of these in chrome/firefox and preview how the website will look live
+			
 			Files that are synced on server ::
+				
 				css/main.css
 				scripts/functions.php
 				scripts/functions.js
 				images
+	
 	processWire templates
+		
 		Final php templates to be uploaded to the server. 
 	
 ***
