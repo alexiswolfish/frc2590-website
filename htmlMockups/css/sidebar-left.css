@@ -20,6 +20,7 @@
 	background-color: #d6d6d6;
 	color: #575656;
 	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;
  }
  a{
 	text-decoration:none;
@@ -36,7 +37,7 @@
 	applied to multipe div tags
  */
  .container {
- 	width: 1100px;
+ 	width: 1000px;
 	min-width:800px;
 	overflow: hidden;
 	margin:0px auto;
@@ -51,7 +52,7 @@
 	margin-bottom: 20px;
  }
 	#banner img{
-		width:1100px;
+		width:1000px;
 	}
 	#logo{
 		position:absolute;
@@ -68,8 +69,68 @@
 	background-color:#fff;
 	display: table;
  }
+ 
+ /* ////////////////////Michael */
+
+#robot_header{
+    text-transform:uppercase;
+    font-size:30px;
+    color:#ff0000;
+    width: 635px;
+    height: 2px;
+    text-align:left;
+    padding-top:10px;
+    margin-bottom:20px;
+    margin-top:20px;
+   
+    background-image:url('../images/div3_small.jpg');
+    background-size: 100% 100%;
+}
+
+#robot{
+	display: inline-block;
+	padding-top: 20px;
+    padding-right:30px;
+	margin-left: auto;
+	margin-right: auto;
+	width:300px;
+}
+#robot2{
+    display: inline-block;
+	padding-top: 20px;
+    padding-right:13px;
+	margin-left: auto;
+	margin-right: auto;
+	width:200px;   
+}
+	#description{
+		display: inline-block;
+	}
+	#robot .label{
+        
+        color:#ff0000;
+        font-size:20px;
+		width:300px;
+        height:0px;
+        text-align:left;
+        margin-bottom:17px;
+	}
+    #robot2 .label{
+        color:#ff0000;
+        font-size:17px;
+		width:200px;
+        height:0px;
+        text-align:left;
+        margin-bottom:15px;
+	}
+	#desc{
+        padding-top:10px;
+    }
+
+	/* Sidebar */
 	aside{
 		display: table-cell;
+		vertical-align: top;
 	}
 		#sidebar{
 			padding-top:140px;
@@ -80,6 +141,11 @@
 			margin: 10px 0 10px 0;
 			width:240px;
 		}
+		#first img{
+			width: 190px;
+			margin-left: 20px;
+			}
+		
 		#sidebar section{
 			border-style: solid none;
 			border-color: #e62901;
@@ -87,6 +153,7 @@
 		/* Navigation */
 		nav{
 			text-transform:uppercase;
+			font-size:14px;
 		}
 			nav li{
 				margin: 0 0 25px 0;
@@ -105,6 +172,50 @@
 		display: table-cell;
 		width: 760px:
 	}
+	.flexslider{
+		display:inline-block;
+		padding: 20px 0px 0px 40px;
+		width:90%;
+	}
+	#section-container{
+		margin: 0 0 0 40px;
+	}
+	#spacer{
+		margin-right:30px;
+	}
+	#content section{
+		width:45%;
+		display:inline-block;
+	}
+		#content section img{
+			width:100%;
+		}
+		.label{
+			text-transform:uppercase;
+			font-size:14px;
+			color:#fff;
+			width: 308px;
+			height: 20px;
+			text-align:center;
+			padding-top:4px;
+			margin-bottom:10px;
+		}
+		#robot-label{
+			background-image:url('../images/div3_small.jpg');
+			background-size: 100% 100%;
+		}
+		#twitter-label{
+			background-image:url('../images/div4_small.jpg');
+			background-size: 100% 100%;
+		}
+/* this targets the default scrollbar (compulsory) 
+	doesn't affect twitter widget : therefore useless
+	
+ ::-webkit-scrollbar {width: 15px;} 
+ ::-webkit-scrollbar-track {background-color: #d6d6d6;}
+ ::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.2);}
+ ::-webkit-scrollbar-button {background-color: #575656;}
+::-webkit-scrollbar-corner {background-color: black;} */
 
  /*Footer */
  footer{
@@ -114,5 +225,12 @@
 	color:#fff;
 	height:130px;
  }
- #foot{margin-top:20px}
+ #foot{margin-top:20px;
+	}
+ footer section{
+	width:210px;
+	margin-left:35px;
+	margin-top:20px;
+	display:inline-block;
+	}
 	
