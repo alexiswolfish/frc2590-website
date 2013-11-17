@@ -7,7 +7,11 @@ include("./header.inc");
 	<div id="main" class="container">
 
 		<div id="content">		
-			<?php echo $page->body ?>
+			
+			<div id="robot_header"> Our Robots</div>
+			
+			
+			
 		</div><!--content-->
 		
 		<aside id="sidebar">
