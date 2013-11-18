@@ -58,7 +58,17 @@ include("./header.inc");
 							?>
 						</div>
 						<div class="readMore">
-							<a href="<?php if($page->aboutPointer){echo $page->aboutPointer->url."#blogPost";} ?>">...Continue Reading</a>
+							<?php
+								if($page->aboutPointer){
+									echo "<a href='".$page->aboutPointer->url."#blogPost'>...Continue Reading</a>";
+								}
+								else{
+									echo"<script>
+										var about = document.getElementById(\"about\");
+										about.style.height = about.scrollHeight+'px';
+										</script>";
+								}
+							?>
 						</div>
 					<div id="title"><h1 class="red">The Challenge</h1></div>
 					<h3 class="grey"><?php echo $page->challengeName; ?></h3>
@@ -89,9 +99,6 @@ include("./header.inc");
 			</div>
 		<script>
 			cssBackground("profile");
-	/*		if(<?php echo $page->sliderHeight;?>){ 
-				(document.getElementsByClassName('flex-viewport')[0]).style.height = <?php echo $page->sliderHeight.'px'; ?>; 
-				}*/
 		</script>
 				
 		</div><!--content-->
@@ -111,7 +118,7 @@ include("./header.inc");
 						$matches = $pages->find($selector);
 						echo "<ul>";
 						foreach($matches as $match){
-							echo "<li><a href='".$match->url."'>".$match->title."</li>";
+							echo "<li><a href='".$match->url."'>".$match->title."</a></li>";
 						}
 						echo "</ul>";
 					?>

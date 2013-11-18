@@ -23,7 +23,7 @@ include("./header.inc");
 			<div id="section-container">
 				<section id="spacer">
 					<?php
-						$robot= $pages->find("parent=/robots/, limit=1, sort=-date");
+						$robot= $pages->find("parent=/robots/, limit=1, sort=date");
 						$robot=$robot[0];
 						echo "<a class='white' href='".($robot->url)."'><div class='label' id='robot-label'>current robot: ".($robot->title)."</div>";
 						echo "<div id='robotImage' class='bgReplace' name='robotImage'>".($robot->profile->url)."</div></a>";
