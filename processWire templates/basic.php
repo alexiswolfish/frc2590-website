@@ -8,8 +8,6 @@ include("./header.inc");
 
 		<div id="content">		
 			
-			<div id="robot_header"> Our Robots</div>
-			
 			
 			
 		</div><!--content-->

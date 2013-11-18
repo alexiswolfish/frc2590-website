@@ -678,3 +678,8 @@ aside{
 		background-size:100%;
 		padding-top:0px;
 	}
+/* ======================================================*/
+/* Calendar */
+#calendar-container{
+	margin: 10px;
+}
