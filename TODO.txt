@@ -37,11 +37,6 @@ TODO || Manual Labor || Coders
 6.) Better/Real Frc 2590 graphic for the header
 		- see header.inc
 =================
-7.) Install/Setup a Google Calendar widget on the /calendar/ page
-		- https://developers.google.com/google-apps/calendar/
-		- Link up to Mr. Meredith's google Calendar
-			- make editable by anyone on leadership?
-=================
 ***
 8.) Research/Install best WIKI to host on our actual server to go hand in hand with the website
 		- email me a list of pros/cons for each one
@@ -87,3 +82,6 @@ TODO || Manual Labor || Coders
 		- Blog Posts "Read More" point to should link back to the robot page.
 ================
 16.) Need page to display all blog posts "tagged" with specific tag
+================
+17.) Fix weird window resizing bug on robots page
+		- There is probably a div tag that isn't closed

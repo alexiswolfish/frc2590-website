@@ -60,7 +60,7 @@ include("./header.inc");
 						<div class="readMore">
 							<?php
 								if($page->aboutPointer){
-									echo "<a href='".$page->aboutPointer->url."#blogPost'>...Continue Reading</a>";
+									echo "<a href='".$page->aboutPointer->url."'>...Continue Reading</a>";
 								}
 								else{
 									echo"<script>
