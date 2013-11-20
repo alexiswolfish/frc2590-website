@@ -28,10 +28,8 @@ TODO || Manual Labor || Coders
 	- switch out the current page and a "new" members-container with
 	  the new sorting functions/php display functions with the current one
 	  with a CSS3 "fade in" effect.
-	- Navigation for Sorting options on top, also to jump to a particular
-	  section of the current sort (e.g. Members, Alumni or Mentors)
-		- Scroll down instead of jump with a CSS3 animation
-		- this nav bar should be static and remain in place even when scrolling
+	  
+	- Does the scrolling make you sick??
 =================
 ***
 6.) Better/Real Frc 2590 graphic for the header

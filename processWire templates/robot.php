@@ -85,17 +85,7 @@ include("./header.inc");
 					}
 				?>
 
-				<div id="extras">
-					<div class="extra" id="spacer">
-						<div class="label" id="robot-label">Articles</div>
-					</div>
-					<div class="extra" id="spacer">
-						<div class="label" id="robot-label"></div>
-					</div>
-					<div class="extra">
-						<div class="label" id="robot-label">Record</div>
-					</div>
-				</div>
+				<div id="barR"> Live Blog </div>
 			</div>
 		<script>
 			cssBackground("profile");

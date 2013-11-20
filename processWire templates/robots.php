@@ -32,7 +32,7 @@ include("./header.inc");
 						echo "		<div id='year'><h1 class='red'>".$robots[$i]->year."</h1></div>";
 						echo "	</div></a>";
 						echo "<div id='about'>".$robots[$i]->postContent."</div>";
-						echo "<div class='readMore'><a href='".$robots[$i]->profile->url."'>...Continue Reading</a></div>";
+						echo "<div class='readMore'><a href='".$robots[$i]->url."'>...Continue Reading</a></div>";
 						echo "<div id='stats-container'>
 								<div id='stats'>";
 						echo "		<table border='0'>";

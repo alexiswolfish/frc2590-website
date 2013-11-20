@@ -4,10 +4,22 @@
 */
 include("./header.inc");
 ?>
+<a href="#" class="scrolltotop" id="up"><img src="../images/upArrow.png" alt="Scroll to top" /></a>
+
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
-				<div id="post-header"><h2 class="red"> Members</h2></div>
+				<div id="bar">
+					<ul>
+						<h3 class="white">
+						<li><a class="white" href="#members" onclick="smoothScroll('members');">Members</a></li>
+						<li><a class="white" href="#mentors" onclick="smoothScroll('mentors');">Mentors</a></li>
+						<li><a class="white" href="#alumni" onclick="smoothScroll('alumni');">Alumni</a></li>
+						</h3>
+					</ul>
+				</div>
+				
+				<div id="post-header"><h2 class="red"><div id="members"> Members</div></h2></div>
 				<?php
 				/*Pull all member pages with a graduation year within four years
 				  of the current year*/
@@ -34,7 +46,7 @@ include("./header.inc");
 						echo "</div></div></div>";
 					}
 				?>
-				<div id="post-header"><h2 class="red"> Mentors</h2></div>
+				<div id="post-header"><h2 class="red"><div id="mentors"> Mentors </div></h2></div>
 				<?php
 				/*Pull all member pages with the Mentor flag flipped*/
 					$mentors = $pages->find("mentor=1, sort=class");
@@ -53,7 +65,7 @@ include("./header.inc");
 						echo "</div></div>";
 					}
 				?>
-				<div id="post-header"><h2 class="red"> Alumni </h2></div>
+				<div id="post-header"><h2 class="red"><div id="alumni"> Alumni </div></h2></div>
 				<?php
 				/*Pull all member pages with a graduation year greater than the cur year */
 				$alumni;
