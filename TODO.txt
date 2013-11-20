@@ -83,3 +83,6 @@ TODO || Manual Labor || Coders
 ================
 17.) Fix weird window resizing bug on robots page
 		- There is probably a div tag that isn't closed
+================
+`8.) Sponsor page should list benefits for each level of donatorships
+		- donate button
