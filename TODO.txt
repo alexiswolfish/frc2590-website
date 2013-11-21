@@ -1,0 +1,88 @@
+TODO || Manual Labor || Coders
+(Non code tasks will be marked with ***)
+
+
+=================
+1.) display Page Loading symbol if images aren't loaded on front page
+=================
+***
+2.) Populate Members page with all Members/Alumni/Mentors
+		- Download/Find all Headshots off of the H Drive
+		- Create photoshop Action to crop to square and resize to 500px by 500px
+	a.) Create individual pages with the "member" template under the "Members" page. 
+		- make sure to include graduation year/freshly cropped headshot
+=================
+3.) Fix Tagging on the BlogPost template
+		- regular expression to pull out ", " between tags.
+		- put in Array
+		- make searchable
+=================
+4.) Robot's Record should display on sidebar of Robot page
+=================
+5.) Sorting Options on the Members page
+	- By "type" (mentor, alumni, member)
+	- by "team" (build, software, finance, marketing)
+	- by "usefulness?" (mrs. wolfe wants her own arbitrary sort order)
+		- will need extra "usefulness" field for members
+		
+	- switch out the current page and a "new" members-container with
+	  the new sorting functions/php display functions with the current one
+	  with a CSS3 "fade in" effect.
+	  
+	- Does the scrolling make you sick??
+=================
+***
+6.) Better/Real Frc 2590 graphic for the header
+		- see header.inc
+=================
+***
+8.) Research/Install best WIKI to host on our actual server to go hand in hand with the website
+		- email me a list of pros/cons for each one
+			- priority being readability, ease of organization, ability to match website visually
+			- check out the one for processing.org for a gold standard reference.
+		- the google site one is kinda wonky, (look into formatting?)
+=================
+9.) Obtain SPONSOR list from Mrs. Wolfe with name of Sponsor + amount donated
+		- Sponsor template should include fields for amount donated, logo, name as a bare minimum
+		- create icons/sort algorithm for the Sponsor page that
+		  displays sponsor in order of money donated
+		- Icons should also scale with amount donated
+		- top THREE sponsor's logos should show up in the footer where
+		  I put that temp "sponsor" text
+			- that code goes in footer.inc
+=================
+***
+10.) Create Wiki page with all of the different templates, what they are used for
+		- include list of all "fields"/variables included with each template
+			- note whether they are mandatory or optional
+			- optional variables need to be checked for null before use
+================
+11.) Extra navigation on Blog page
+		-Monthly dropdown?
+		-Calendar?
+		-Sort into "teams"
+================
+12.) "Paging" for Blog page
+		- user should be able to click on "next" OR put in an "infinite scroll" script
+		- "Archive" should probably be its own template
+================
+***
+13.) Go back and copy/paste all the old/relevant Blog posts from the old website
+		-Featured images need to be more attractive
+			- Level them in photoshop at least
+			- pick a new one from the flickr
+================
+14.) Lightbox for images
+		-when you click on them, they should pop out into their
+		 own larger display
+================
+15.) "Read More" on blog thumbnails instead of just cutting off the div
+		- Blog Posts "Read More" point to should link back to the robot page.
+================
+16.) Need page to display all blog posts "tagged" with specific tag
+================
+17.) Fix weird window resizing bug on robots page
+		- There is probably a div tag that isn't closed
+================
+`8.) Sponsor page should list benefits for each level of donatorships
+		- donate button
