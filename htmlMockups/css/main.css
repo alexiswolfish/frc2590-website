@@ -497,9 +497,9 @@ aside{
 }
 .mostRecent{
 	width:174px;
-	margin: 20px 10px;
 	display:inline-block;
 	vertical-align:top;
+	padding:10px;
 }
 .mostRecent:hover{
 	background-color:rgba(228,239,246,0.8);
