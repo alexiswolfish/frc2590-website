@@ -1,6 +1,6 @@
 <?php
 /*
-	Index Page
+	Individual Sponsor Page
 */
 include("./header.inc");
 ?>
@@ -11,7 +11,12 @@ include("./header.inc");
 				<div id="sponsor">
 					<div id="sponsor-logo" name="logo">
 						<script>
-							document.getElementById("sponsor-logo").style.backgroundImage = "url('<?php echo $page->profile->url?>')";
+							var logo = document.getElementById("sponsor-logo");
+							logo.style.backgroundImage = "url('<?php echo $page->profile->url?>')";
+							
+							if(<?php echo $page->profile->width?> > 314){
+								logo.style.backgroundSize = 'contain';
+								}
 						</script>
 					</div>
 					<div id="fields">
@@ -24,11 +29,31 @@ include("./header.inc");
 					</div>
 				</div>
 				<div id="bio">
-					<?php echo $page->postContent ?>
+					<?php echo $page->postContent; ?>
+					
+					<div id="sponsor-robot-container" class="border">
+						<h3> Robots <?php echo $page->title; ?> has helped build </h3>
+						
+						<?php
+							foreach( $page->robots as $robot){
+								echo "<div class='sponsor-robot'>";
+								echo "<a href='".$robot->url."'>";
+								echo "<div id='profile' name='profile'>".$robot->profile->url."</div>";
+								echo "<div id='fields'><h3>".$robot->title."</h3>";
+								echo $robot->year;
+								echo "</a></div></div>";
+							}
+						?>
+					
+					</div>
 				</div>
+
+				
 			</div><!--sponsors-container-->
 		</div><!--content-->
-		
+		<script>
+			cssBackground('profile');
+		</script>
 		<aside id="sidebar">
 			
 			<!-- include sidebar from template file-->

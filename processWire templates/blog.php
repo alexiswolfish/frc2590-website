@@ -29,6 +29,8 @@ include("./header.inc");
 					echo "<div id='fields'><h3>";
 					echo ($post->title)."</h3><p>".($post->postContent)."</p></div></a></div>";
 				}
+				
+				/*Find Archieve posts*/
 				echo "<div id='bar'><h3 class='white'>Archive</h3></div>";
 				
 				$archive = $pages->find("parent=/blog/, sort=-date" );
@@ -49,6 +51,7 @@ include("./header.inc");
 					}
 				}
 				function echoArchive($post){
+					/* Print out the proper html to display an archive post*/
 					echo "<div class='archive'><a href='".($post->url)."'><div id='blogImg-container' name='featuredImage'>".($post->featuredImage->url)."</div>";
 					echo "<div id='postContent'><div id='title'><h3>".$post->title."</h3></div></br>";
 					echo "<div class='grey'><a class='grey' href='".($post->author->url)."'>".($post->author->title)."</a></div></a>";

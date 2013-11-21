@@ -14,6 +14,13 @@ function cssBackground(divName){
 	}
 }
 
+/* Get Background size
+ * get the size of like, a background image.
+ *
+ */
+ 
+ function getBackgroundSize(selector, callback) {
+ }
 /*Is Overflowed
  *
  * takes a DOM element and returns a boolean if the element has an overflow value

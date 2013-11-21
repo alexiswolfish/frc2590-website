@@ -36,6 +36,12 @@ include("./header.inc");
 								echo"<div id='profession' class='grey'>$page->college</div>";
 							}
 							?>
+							<?php 
+					// If the page is editable, then output a link that takes us straight to the page edit screen:
+					if($page->editable()) {
+						echo "<a class='red' href='{$config->urls->admin}page/edit/?id={$page->id}'>Edit</a>"; 
+					}
+				?>
 					</div>
 				</div>
 				<div id ="bio">

@@ -50,4 +50,21 @@
 		echo "<div class='red'>Web Team</div>";
 	}
  }
+ 
+  /* Print Sponsor
+  *
+  * args : pointer to Sponsor Page object
+  */
+  
+  function displaySponsor($page){
+	echo "<div class = 'sponsor'>
+				<a href='".$page->url."'>
+				<div id ='sponsor-logo' name='profile'>";
+	echo $page->profile->url;
+	echo "</div>
+				<div id ='fields'>
+					<h3>".$page->title."</h3>
+				</div>";
+	echo "</a></div>";
+  }
 ?>

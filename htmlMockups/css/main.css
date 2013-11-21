@@ -80,7 +80,10 @@
 .white{
 	color:#fff;
 }
-
+.border{
+	border-color: #d6d6d6;
+	border-width: 2px;
+}
  /* ======================================================*/
  /* Container Class */
  /*
@@ -556,7 +559,9 @@ aside{
 		-moz-border-radius: 200px;
 		-webkit-border-radius: 200px;
 		border-radius: 200px;
-		background-size: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position:center;
 		margin-bottom: 10px;
 	}
 	#name{
@@ -771,7 +776,7 @@ aside{
 	background:#d6d6d6;
 }
 /* ======================================================*/
-/* Spomsors */
+/* Sponsors */
 #sponsors-container{
 	margin: 20px;
 }
@@ -796,4 +801,46 @@ aside{
 #sponsors-container #{
 	display:inline-block;
 	width:25%;
+}
+.sponsor-robot{
+	width:118px;
+	display:inline-block;
+	margin: 10px;
+	vertical-align:top;
+}
+.sponsor-robot #profile{
+	width:115px;
+	height:115px;
+}
+#sponsor-robot-container{
+	margin:20px 0;
+	padding:20px 0;
+	border-style:dotted none none none;
+}
+.sponsor{
+	width:370px;
+	padding:10px;
+	display:inline-block;
+}
+
+#sponsorImg{
+	width:100%;
+	height:100px;
+}
+#supportImg{
+	display:inline-block;
+	margin-right:20px;
+	vertical-align:top;
+	margin-top:12px;
+}
+#support{
+	display:inline-block;
+	width:510px;
+}
+#feat img{
+	width:100%;
+	margin-bottom:10px;
+}
+#sponsors-container #barR{
+	height:7px;
 }

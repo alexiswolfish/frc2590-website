@@ -99,14 +99,7 @@ include("./header.inc");
 			<script>
 			/*Script that replaces the php generated URL in the "profile" div with
 			  a background-image css attribute and erases the URL*/
-				var profileImages = document.getElementsByName("profile");
-				for( var i=0; i<profileImages.length; i++){
-					var url = "url('";
-					url = url.concat(profileImages[i].innerHTML);
-					url = url.concat("')");
-					profileImages[i].style.backgroundImage = url;
-					profileImages[i].innerHTML="";
-				}
+			cssBackground("profile");
 			</script>
 			
 		</div><!--content-->
@@ -117,6 +110,10 @@ include("./header.inc");
 
 			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
+				<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team based out of Robbinsville High School in New Jersey.
+				</p>
+				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
+				</p>
 			</section>
 			
 		</aside> <!-- sidebar -->

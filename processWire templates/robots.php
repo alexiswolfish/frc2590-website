@@ -38,13 +38,15 @@ include("./header.inc");
 						echo "		<table border='0'>";
 						echo "			<tr><th>Record</th><td>".$robots[$i]->record."</td></tr>";
 						echo "			<tr><th>Drive Team</th><td>";
+						
 							for($j=0; $j < sizeof($robots[$i]->driveTeam); $j++){
 									$driver = $robots[$i]->driveTeam[$j];
 									echo "<a href='".$driver->url."'>".$driver->title."</a>";
-									if($j < sizeof($robots[$j]->driveTeam)-1){
+									if($j < sizeof($robots[$i]->driveTeam)-1){
 										echo ", ";
 									}
 								}
+								
 						echo "			</td></tr>
 									</table>";
 						echo"	</div>
