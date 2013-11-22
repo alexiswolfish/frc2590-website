@@ -5,13 +5,6 @@ TODO || Manual Labor || Coders
 =================
 1.) display Page Loading symbol if images aren't loaded on front page
 =================
-***
-2.) Populate Members page with all Members/Alumni/Mentors
-		- Download/Find all Headshots off of the H Drive
-		- Create photoshop Action to crop to square and resize to 500px by 500px
-	a.) Create individual pages with the "member" template under the "Members" page. 
-		- make sure to include graduation year/freshly cropped headshot
-=================
 3.) Fix Tagging on the BlogPost template
 		- regular expression to pull out ", " between tags.
 		- put in Array
@@ -57,23 +50,22 @@ TODO || Manual Labor || Coders
 		- user should be able to click on "next" OR put in an "infinite scroll" script
 		- "Archive" should probably be its own template
 ================
-***
-13.) Go back and copy/paste all the old/relevant Blog posts from the old website
-		-Featured images need to be more attractive
-			- Level them in photoshop at least
-			- pick a new one from the flickr
-================
-14.) Lightbox for images
-		-when you click on them, they should pop out into their
-		 own larger display
-================
-15.) "Read More" on blog thumbnails instead of just cutting off the div
-		- Blog Posts "Read More" point to should link back to the robot page.
-================
 16.) Need page to display all blog posts "tagged" with specific tag
 ================
-17.) Fix weird window resizing bug on robots page
-		- There is probably a div tag that isn't closed
-================
-`8.) Sponsor page should list benefits for each level of donatorships
+18.) Sponsor page should list benefits for each level of donatorships
 		- donate button
+			- should go to paypal account
+		-snail mail instructions need to be listed somewhere
+================
+19.) Create Resources page
+		- Links
+		- Blog posts tagged "tutorial"
+		- See OF or Processing Wiki
+================
+20.) Create Community page
+================
+21.) Create "sub" team page
+================
+22.) Pull posts from the tumblr
+================
+23.) Media page?

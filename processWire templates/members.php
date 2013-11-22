@@ -4,12 +4,13 @@
 */
 include("./header.inc");
 ?>
-<a href="#" class="scrolltotop" id="up"><img src="../images/upArrow.png" alt="Scroll to top" /></a>
+<a href="#" class="scrolltotop" id="up"><img src="<?php echo $config->urls->templates; ?>images/upArrow.png" alt="Scroll to top" /></a>
 
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
-				<div id="bar">
+				<img src="<?php echo $config->urls->templates; ?>images/composite.jpg" width="785px">
+				<!-- <div id="bar">
 					<ul>
 						<h3 class="white">
 						<li><a class="white" href="#members" onclick="smoothScroll('members');">Members</a></li>
@@ -17,7 +18,7 @@ include("./header.inc");
 						<li><a class="white" href="#alumni" onclick="smoothScroll('alumni');">Alumni</a></li>
 						</h3>
 					</ul>
-				</div>
+				</div> -->
 				
 				<div id="post-header"><h2 class="red"><div id="members"> Members</div></h2></div>
 				<?php

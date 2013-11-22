@@ -41,7 +41,7 @@
 	<header id="header-home" class="container">
 		<div id="nemesis">
 			<img src="<?php echo $config->urls->templates?>images/Nemesis_transparent_black.png">
-			<div id="frc"><img src="<?php echo $config->urls->templates?>images/frc2590.png"></div>
+			<!-- <div id="frc"><img src="<?php echo $config->urls->templates?>images/frc2590.png"></div> -->
 		</div>
 		<div id="logo"><a href= "<?php echo $config->urls->root?>"><img src="<?php echo $config->urls->templates?>images/logo_winged.jpg"></a></div>
 	</header>
