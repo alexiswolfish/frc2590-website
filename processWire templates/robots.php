@@ -13,10 +13,10 @@ include("./header.inc");
 					$robots = $pages->find("template=robot, sort=-year");
 					for($i=0; $i<sizeof($robots); $i++){
 						/*Set up spacing and grid format*/
-						if($i==0){
+						if(($i%5) == 0){
 							echo "<div class='robot-large' id='spacer'>";
 							}
-						else if($i==1){
+						else if(($i%5) == 1){
 							echo "<div class='robot-large'>";
 						}
 						else if( ($i-2)%3 != 2){
@@ -64,6 +64,10 @@ include("./header.inc");
 
 			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
+							<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team based out of Robbinsville High School in New Jersey.
+				</p>
+				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
+				</p>
 			</section>
 			
 		</aside> <!-- sidebar -->

@@ -151,32 +151,51 @@
 	background-color:#fff;
 	width: 1100px
  }
+ #main-container{
+	padding:20px;
+ }
  #content{
 	float: left;
 	vertical-align:top;
 	width:75%;
 }
 #flexslider-container{
-	height:630px;
+	height:560px;
 }
 .flexslider{
 	display:inline-block;
-	padding: 20px 0px 0px 20px;
-	width:92%;
+	width:100%;
 }
 
 .flex-viewport{
-	height:550px;
+	height:500px;
+}
+.flex-caption{
+	/*--------------*/
+	height:60px;
+	width:785px;
+	display:block;
+	position: absolute;
+	float:left;
+	bottom: 100px;
+	
+	padding-top:10px;
+	background: rgba(0,0,0,.6);
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	line-height: 18px;
+	/*--------------*/
 }
 
 #section-container{
-	margin: 0 0 50px 20px;
+	margin-bottom:50px;
 }
 #spacer{
 	margin-right:30px;
 }
 #content section{
-	width:45%;
+	width:376px;
 	height:378px;
 	display:inline-block;
 	vertical-align: top;
@@ -196,7 +215,7 @@
 		height: 20px;
 		text-align:center;
 		padding-top:4px;
-		margin-bottom:10px;
+		margin-bottom:5px;
 	}
 	#robot-label{
 		background-image:url('../images/div3_small.jpg');
@@ -610,6 +629,9 @@ aside{
 	}
 	#featured img{
 		width:100%;
+	}
+	#blogPost img{
+		max-width:100%;
 	}
 /* ======================================================*/
 /* Robot */

@@ -9,7 +9,6 @@ include("./header.inc");
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
-				<img src="<?php echo $config->urls->templates; ?>images/composite.jpg" width="785">
 				<div id="bar">
 					<ul>
 						<h3 class="white">
