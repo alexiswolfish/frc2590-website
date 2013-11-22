@@ -1,5 +1,3 @@
-frc2590-website
-===============
 
 A website for Nemesis Robotics
 
@@ -67,3 +65,4 @@ Using our CMS
 
 ProcessWire API
 http://processwire.com/api/
+
