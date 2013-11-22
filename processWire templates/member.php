@@ -54,7 +54,7 @@ include("./header.inc");
 					<ul>
 						<?php
 						/*Search blog for authored posts*/
-						$rPosts = $pages->find("parent=/Blog/, author=$page, limit=5, sort=date");
+						$rPosts = $pages->find("parent=/Blog/, author=$page, limit=5, sort=-date");
 						foreach( $rPosts as $post){
 							echo "<li><a class='grey' href=\"$post->url\"> $post->title </a></li></br>";
 						}
@@ -68,7 +68,7 @@ include("./header.inc");
 					<h3>Mentions</h3>
 					<!-- Search Blog Post Tags for name-->
 					<?php
-						$selector = "parent=/blog/, limit=10, tags*=".$page->lastName;
+						$selector = "parent=/blog/, sort=-date, limit=10, tags*=".$page->lastName;
 						$matches = $pages->find($selector);
 						echo "<ul>";
 						foreach($matches as $match){

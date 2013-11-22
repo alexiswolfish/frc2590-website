@@ -42,7 +42,7 @@
 	}
 	if($page->Software_Team){
 		if($mult){echo $spacer;}
-		echo "Sotware Team";
+		echo "Software Team";
 		$mult =true;
 	}
 	if($page->Web_Team){

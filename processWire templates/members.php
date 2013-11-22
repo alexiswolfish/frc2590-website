@@ -9,16 +9,16 @@ include("./header.inc");
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
-				<img src="<?php echo $config->urls->templates; ?>images/composite.jpg" width="785px">
-				<!-- <div id="bar">
+				<img src="<?php echo $config->urls->templates; ?>images/composite.jpg" width="785">
+				<div id="bar">
 					<ul>
 						<h3 class="white">
-						<li><a class="white" href="#members" onclick="smoothScroll('members');">Members</a></li>
+						<li><a class="white" href="#" onclick="smoothScroll('members');">Members</a></li>
 						<li><a class="white" href="#mentors" onclick="smoothScroll('mentors');">Mentors</a></li>
 						<li><a class="white" href="#alumni" onclick="smoothScroll('alumni');">Alumni</a></li>
 						</h3>
 					</ul>
-				</div> -->
+				</div>
 				
 				<div id="post-header"><h2 class="red"><div id="members"> Members</div></h2></div>
 				<?php
@@ -116,6 +116,7 @@ include("./header.inc");
 				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
 				</p>
 			</section>
+		
 			
 		</aside> <!-- sidebar -->
 		
