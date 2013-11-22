@@ -27,7 +27,7 @@ include("./header.inc");
 			<div id ="post">
 				<div id ="post-header">
 					<div id ="details" class="grey">
-						tag // tag // tag // <?php echo $page->date ?>
+					<?php echo $page->date ?>
 					</div>
 					<div id ="title">
 						<h1 class="red"><?php echo $page->title ?></h1>

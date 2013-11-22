@@ -305,18 +305,36 @@ aside{
  /*Footer */
  footer{
 	border-top:solid;
-	border-color:#e62901;
-	background-color:#575656;
-	color:#fff;
-	height:130px;
+	border-color:#5e5e5e;
+	border-width:10px;
+	background-color:white;
+ }
+ #stripe{
+	width:100%;
+	height:5px;
+	background-color:#e62901;
  }
  #foot{margin-top:20px;
 	}
+	#foot #sponsor-logo{
+		width:100%;
+		height:110px;
+		vertical-align:top;
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center; 
+	}
  footer section{
-	width:20%;
-	margin-left:35px;
-	margin-top:20px;
+	width:186px;
+	height:100%;
+	padding-left:10px;
+	margin:20px 0 10px 20px;
 	display:inline-block;
+	vertical-align:top;
+	border-style:none none none dotted;
+	border-color:#e62901;
+	border-width:2px;
+	overflow:hidden;
 	}
 
 /* ======================================================*/
@@ -404,24 +422,26 @@ aside{
 		width:100px;
 	}
 .person{
-	width:200px;
-	padding:15px;
+	width:175px;
+	padding:10px;
 	display:inline-block;
 	vertical-align:top;
 }
 .person #profile{
 	display:inline-block;
+	width:175px;
+	height:175px;
 }
 .person #profile img{
-	width:200px;
-	height:200px;
+	width:160px;
+	height:160px;
 	-moz-border-radius:200px;
 	-webkit-border-radius:200px;
 	border-radius:200px;
 }
 .person #fields{
 	display:inline-block;
-	width:200px;
+	width:100%;
 }
 .bio{
 	display: inline;
@@ -790,6 +810,7 @@ aside{
 #sponsor{
 	display:inline-block;
 	padding-left:10px;
+	margin-right:10px;
 	width:40%;
 }
 	#sponsor-logo{
@@ -831,7 +852,6 @@ aside{
 	display:inline-block;
 	margin-right:20px;
 	vertical-align:top;
-	margin-top:12px;
 }
 #support{
 	display:inline-block;

@@ -18,9 +18,9 @@ include("./header.inc");
 				</div>
 				<div id="feat"><img src="<?php echo $page->featuredImage->url?>"></div>
 				
-				<div id="post-header"><h2 class="red"><div id="members"> Diamond Sponsors </div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Diamond Sponsors </div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>=10000, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>=10000, sort=-doonation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 						}
@@ -28,37 +28,37 @@ include("./header.inc");
 							echo "<i>it looks like we don't have any Diamond sponsors yet. Become one today and inhabit this glorious space by donating!</i>";
 						}
 					?>
-				<div id="post-header"><h2 class="red"><div id="members"> Platinum Sponsors</div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Platinum Sponsors</div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>=5000, donation<10000, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>=5000, donation<10000, sort=-donation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 						}
 					?>
-				<div id="post-header"><h2 class="red"><div id="members"> Gold Sponsors</div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Gold Sponsors</div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>=3000, donation<5000, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>=3000, donation<5000, sort=-donation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 						}
 					?>
-				<div id="post-header"><h2 class="red"><div id="members"> Silver Sponsors</div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Silver Sponsors</div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>=1000, donation<3000, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>=1000, donation<3000, sort=-donation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 						}
 					?>
-				<div id="post-header"><h2 class="red"><div id="members"> Bronze Sponsor</div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Bronze Sponsor</div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>=500, donation<1000, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>=500, donation<1000, sort=-donation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 						}
 					?>
-				<div id="post-header"><h2 class="red"><div id="members"> Honored Donor</div></h2></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Honored Donor</div></h1></div>
 					<?php
-						$sponsors = $pages->find("template=sponsor, donation>0, donation<500, sort=donation");
+						$sponsors = $pages->find("template=sponsor, donation>0, donation<500, sort=-donation");
 						foreach($sponsors as $sponsor){
 							displaySponsor($sponsor);
 							

@@ -42,17 +42,8 @@ TODO || Manual Labor || Coders
 			- check out the one for processing.org for a gold standard reference.
 		- the google site one is kinda wonky, (look into formatting?)
 =================
-9.) Obtain SPONSOR list from Mrs. Wolfe with name of Sponsor + amount donated
-		- Sponsor template should include fields for amount donated, logo, name as a bare minimum
-		- create icons/sort algorithm for the Sponsor page that
-		  displays sponsor in order of money donated
-		- Icons should also scale with amount donated
-		- top THREE sponsor's logos should show up in the footer where
-		  I put that temp "sponsor" text
-			- that code goes in footer.inc
-=================
 ***
-10.) Create Wiki page with all of the different templates, what they are used for
+10.) Create Wiki (or Tutorial blog Post) page with all of the different templates, what they are used for
 		- include list of all "fields"/variables included with each template
 			- note whether they are mandatory or optional
 			- optional variables need to be checked for null before use
