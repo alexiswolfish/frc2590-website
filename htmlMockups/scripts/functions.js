@@ -88,4 +88,12 @@ function destYPosition(eID) {
         y += node.offsetTop;
     } return y;
 }
- 
+
+function smooth_scroll_2(dst) {
+    $('html,body').animate({ scrollTop: $("#"+dst).offset().top}, 'slow');
+}
+
+function smooth_scroll_3() {
+    $('html,body').animate({ scrollTop: 500}, {duration:1000});
+    $('html,body').animate({ scrollTop: 0}, {duration:1000});
+}
