@@ -18,7 +18,7 @@ include("./header.inc");
 								echo "<li><img src='{$i->url}'/></li>";
 							}
 							/*pull featuredImages tagged "featured"*/
-							$featuredPages = $pages->find("featuredImage.tags=featured, limit=4, sort-=date");
+							$featuredPages = $pages->find("featuredImage.tags=featured, limit=6, sort-=date");
 							foreach($featuredPages as $k){
 								echo "<li><img src='{$k->featuredImage->url}'/>";
 								echo "<p class='flex-caption'>

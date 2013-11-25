@@ -29,6 +29,7 @@
 	color: #575656;
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	font-size: 12px;
+	height: 100%;
  }
  h1{
 	/*font-family:"codeBold";*/
@@ -40,7 +41,7 @@
  h2{
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	text-transform:uppercase;
-	color:#e62901;
+	color:#f01d0c;
 	margin:0px;
 	font-weight:400;
 	font-size:20px;
@@ -48,21 +49,21 @@
  h3{
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	text-transform:uppercase;
-	color:#e62901;
+	color:#f01d0c;
 	font-weight:400;
 	font-size:14px;
 	margin: 0px;
  }
  a{
 	text-decoration:none;
-	color:#e62901
+	color:#f01d0c;
  }
  ul{
 	list-style:none;
 	padding:0px;
  }
 .red{
-	color:#e62901;
+	color:#f01d0c;
 	display:inline-block;
 	vertical-align:top;
 }
@@ -149,7 +150,8 @@
 
  #main{
 	background-color:#fff;
-	width: 1100px
+	width: 1100px;
+	height:100%;
  }
  #main-container{
 	padding:20px;
@@ -158,6 +160,7 @@
 	float: left;
 	vertical-align:top;
 	width:75%;
+	height:100%;
 }
 #flexslider-container{
 	height:560px;
@@ -180,7 +183,7 @@
 	bottom: 100px;
 	
 	padding-top:10px;
-	background: rgba(0,0,0,.6);
+	background: rgba(255,18,12,.6);
 	color: #fff;
 	text-align: center;
 	font-size: 14px;
@@ -272,7 +275,7 @@ aside{
 	
 	#sidebar section{
 		border-style: solid none;
-		border-color: #e62901;
+		border-color: #f01d0c;
 		width: 240px;
 	}
 	#sidebar p{
@@ -309,7 +312,7 @@ aside{
 				transition:color 1s ease;  
 			}
 			nav a:hover{
-				color:#e62901; /*red*/
+				color:#f01d0c; /*red*/
 			}
 	
 /* this targets the default scrollbar (compulsory) 
@@ -332,7 +335,7 @@ aside{
  #stripe{
 	width:100%;
 	height:5px;
-	background-color:#e62901;
+	background-color:#f01d0c;
  }
  #foot{margin-top:20px;
 	}
@@ -352,7 +355,7 @@ aside{
 	display:inline-block;
 	vertical-align:top;
 	border-style:none none none dotted;
-	border-color:#e62901;
+	border-color:#f01d0c;
 	border-width:2px;
 	overflow:hidden;
 	}
@@ -484,7 +487,7 @@ aside{
 .bio:hover:before{
     border: solid;
    /* border-color: #333 transparent;*/
-	border-color: #e62901 transparent; 
+	border-color: #f01d0c transparent; 
     border-width: 6px 6px 0 6px;
     bottom: 150px;
     content: "";
@@ -695,7 +698,7 @@ aside{
 			margin-top:10px;
 			border-style:none none solid none;
 			border-width:4px;
-			border-color:#e62901;
+			border-color:#f01d0c;
 			background-size:cover;
 			background-repeat:no-repeat;
 			background-position:center; 
@@ -887,3 +890,65 @@ aside{
 #sponsors-container #barR{
 	height:7px;
 }
+/* ======================================================*/
+/* Resources */
+
+#resources-container{
+	margin:20px;
+	border-style: none dotted none none;
+	height:100%;
+	font-size:14px;
+}
+	#resources-container li{
+		/*
+		border-style: dotted none none none;
+		border-color: #d6d6d6;
+		border-width: 2px;
+		margin-left:40px;*/
+		padding:4px 0;
+	}
+	#resources-container a{
+		color: #a4a4a4;
+	}
+#blockLeft{
+	width:230px;
+	height:100%;
+	border-style:none dotted none none;
+	padding: 0 10px;
+	display:inline-block;
+	vertical-align:top;
+}
+#blockList{
+	display:inline-block;
+	vertical-align:top;
+	padding:10px;
+	margin-left:10px;
+	/*width: 535px;*/
+	width: 220px;
+	height:290px;
+}
+
+#heading{
+	margin-bottom:20px;
+	border-style:none none dotted none;
+}
+#tumblr{
+	width:500px;
+	display:inline-block;
+}
+	#tumblr img{
+		width:500px;
+	}
+#tutorials{
+	display:inline-block;
+	width:230px;
+	height:100%;
+	vertical-align:top;
+	padding:10px 10px;
+
+	color:#fff;
+	background-color:rgba(255,18,12,.9);
+}
+	#tutorials #heading{
+		color: white;
+	}
