@@ -15,23 +15,27 @@ include("./header.inc");
 						<p>a compilation of useful resources for FRC2590</p>
 					</div>
 				</div>
-				<div class="blockList">
+				<div class="blockList" id="firstLinks"> 
 					<h3 id="heading" class="border"><b>FIRST community</b></h3>
 					<ul><?php
 						foreach($page->firstLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>
 				<div id="tutorials">
 					<h3 id="heading" class="border"><b>tutorials</b></h3>
 					<ul><?php
-						foreach($page->tutorialLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
-						}
 						$siteTutorials = $pages->find("template=blogPost, tags*=tutorial, sort=-date");
 						foreach($siteTutorials as $link){
-							echo "<li><a href='{$link->url}'>{$link->title}</a></li>";
+							$snip = strip_tags($link->postContent);
+							$snip = substr($snip,0,125);
+							echo "<li><a href='{$link->url}'>{$link->title}<span>";
+							echo $snip;
+							echo "</span></a></li>";
+						}
+						foreach($page->tutorialLinks as $link){
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>
@@ -57,7 +61,7 @@ include("./header.inc");
 					<h3 id="heading" class="border"><b>Nemesis Media</b></h3>
 					<ul><?php
 						foreach($page->nemesisLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>
@@ -65,7 +69,7 @@ include("./header.inc");
 					<h3 id="heading" class="border"><b>Software Team</b></h3>
 					<ul><?php
 						foreach($page->softwareTeamLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>
@@ -73,7 +77,7 @@ include("./header.inc");
 					<h3 id="heading" class="border"><b>Web Dev Team</b></h3>
 					<ul><?php
 						foreach($page->webDevLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>
@@ -81,7 +85,7 @@ include("./header.inc");
 					<h3 id="heading" class="border"><b>Build Team</b></h3>
 					<ul><?php
 						foreach($page->buildTeamLinks as $link){
-							echo "<li><a href='{$link->link}' title='{$link->linkDesc}' class='linkDesc'>{$link->title}</a></li>";
+							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
 				</div>

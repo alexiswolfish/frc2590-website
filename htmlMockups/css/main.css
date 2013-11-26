@@ -911,19 +911,44 @@ aside{
 	}
 	#resources-container a{
 		color: #a4a4a4;
+		position:relative;
 	}
 		#resources-container a:hover{
 		color:#f01d0c; /*red*/
-	}
+		}
+		#resources-container a[title]:hover:after{
+			background: rgba(255,18,12,.8);
+			color: #fff;
+			z-index: 20px;
+			padding: 10px;
+		}
+		#resources-container a.linkDesc span{
+			display:none;
+		}
+		#resources-container a.linkDesc:hover span{
+			display: block;
+			width:250px;
+			left: 50px;
+			top: 20px;
+			position: absolute;
+			
+			background: rgba(255,18,12,.8);
+			color: #fff;
+			z-index: 100;
+			padding: 10px;
+			
+		}
+		
 #blockLeft{
-	width:230px;
+	width:240px;
 	height:100%;
 	border-style:none dotted none none;
 	display:inline-block;
 	vertical-align:top;
+	padding-right:10px;
 }
 	#blockLeft img{
-		padding:0 10px;
+		padding:0 15px;
 	}
 .blockList{
 	display:inline-block;
@@ -948,6 +973,7 @@ aside{
 	width:500px;
 	display:inline-block;
 	padding-bottom:10px;
+	position: relative;
 }
 	#tumblr img{
 		width:500px;
@@ -957,7 +983,7 @@ aside{
 		height:50px;
 		position:absolute;
 		float:left;
-		bottom:180px;
+		bottom:20px;
 		
 		text-align:center;
 		color:#fff;
@@ -983,5 +1009,26 @@ aside{
 		color: white;
 	}
 	#tutorials a:hover{
-		color: rgb(77, 207, 219);
+		color: rgb(102,208,234);
 	}
+		#tutorials a span{
+			display:none;
+		}
+		#tutorials a:hover span{
+			display: block;
+			width:250px;
+			left: 50px;
+			top: 20px;
+			position: absolute;
+			
+			background: rgba(102,208,234,0.9);
+			color:#fff;
+			z-index: 100;
+			padding: 10px;
+		}
+		#tutorials a.linkDesc:hover span{
+			background: rgba(102,208,234,0.95);
+		}
+		#firstLinks a.linkDesc:hover span{
+			background: rgba(102,208,234,0.9);
+		}
