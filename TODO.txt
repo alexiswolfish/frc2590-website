@@ -76,3 +76,7 @@ TODO || Manual Labor || Coders
 ***
 31.) Michael Filipek needs to draw more robots
 		- greyscale with accent red?
+================
+32.) Fix Tooltips on member page
+		- they should work with pure CSS solution used on resources page
+		- don't use the title field to eliminate double tooltip.
