@@ -4,8 +4,6 @@
 */
 include("./header.inc");
 ?>
-<a href="#" class="scrolltotop" id="up"><img src="<?php echo $config->urls->templates; ?>images/upArrow.png" alt="Scroll to top" /></a>
-
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
@@ -94,13 +92,7 @@ include("./header.inc");
 						echo "</div></div></div>";
 					}
 				?>
-			</div><!--members-container-->
-			
-			<script>
-			/*Script that replaces the php generated URL in the "profile" div with
-			  a background-image css attribute and erases the URL*/
-			cssBackground("profile");
-			</script>
+			</div><!--members-container--> 
 			
 		</div><!--content-->
 		<aside id="sidebar">
@@ -114,13 +106,21 @@ include("./header.inc");
 				</p>
 				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
 				</p>
-			</section>
-		
-			
-		</aside> <!-- sidebar -->
-		
+			</section>	
+		</aside> <!-- sidebar -->	
 	</div> <!--container-->
-		
+	
+<script>
+/*Script that replaces the php generated URL in the "profile" div with
+  a background-image css attribute and erases the URL*/
+cssBackground("profile");
+</script>
+<script type="text/javascript">
+	$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();});
+
+	//scrolldEasing = 'easeInOutCirc';
+</script> 
+			
 <?php
 include("./footer.inc");
 ?>
