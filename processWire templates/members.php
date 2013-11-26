@@ -115,11 +115,6 @@ include("./header.inc");
   a background-image css attribute and erases the URL*/
 cssBackground("profile");
 </script>
-<script type="text/javascript">
-	$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();});
-
-	//scrolldEasing = 'easeInOutCirc';
-</script> 
 			
 <?php
 include("./footer.inc");

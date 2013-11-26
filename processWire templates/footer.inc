@@ -14,6 +14,15 @@ Contact Us</a></section>
 	<script>
 		cssBackground('sponsor-logo');
 	</script>
+	
 	</footer>
-</body>
+	
+	<script type="text/javascript">
+	//Scroll to Top script
+		$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();});
+
+		//scrolldEasing = 'easeInOutCirc';
+	</script> 
+	
+	</body>
 </html>

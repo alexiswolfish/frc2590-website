@@ -5,24 +5,9 @@ TODO || Manual Labor || Coders
 =================
 1.) display Page Loading symbol if images aren't loaded on front page
 =================
-3.) Fix Tagging on the BlogPost template
-		- regular expression to pull out ", " between tags.
-		- put in Array
-		- make searchable
-=================
 4.) Robot's Record should display on sidebar of Robot page
-=================
-5.) Sorting Options on the Members page
-	- By "type" (mentor, alumni, member)
-	- by "team" (build, software, finance, marketing)
-	- by "usefulness?" (mrs. wolfe wants her own arbitrary sort order)
-		- will need extra "usefulness" field for members
-		
-	- switch out the current page and a "new" members-container with
-	  the new sorting functions/php display functions with the current one
-	  with a CSS3 "fade in" effect.
-	  
-	- Does the scrolling make you sick??
+		- get record from Blue Alliance
+		- Ask Antonio
 =================
 ***
 6.) Better/Real Frc 2590 graphic for the header
@@ -44,7 +29,9 @@ TODO || Manual Labor || Coders
 11.) Extra navigation on Blog page
 		-Monthly dropdown?
 		-Calendar?
-		-Sort into "teams"
+		-Seperate Archieve Page?
+		-Tumblr posts? 
+			- these should probably display here but where
 ================
 12.) "Paging" for Blog page
 		- user should be able to click on "next" OR put in an "infinite scroll" script
@@ -54,22 +41,38 @@ TODO || Manual Labor || Coders
 ================
 18.) Sponsor page should list benefits for each level of donatorships
 		- donate button
-			- should go to paypal account
+			- should go to paypal account (Ask mrs. wolfe/mr. meredith to set up)
 		-snail mail instructions need to be listed somewhere
 ================
-20.) Create Community page
-================
-21.) Create "sub" team page
+20.) Create Community page (Impact)
+		- Discovery Day?
+		- Community Service
 ================
 22.) Pull posts from the tumblr
+		- on tagged pages
+		- robot pages
 ================
-23.) Media page?
-================
-24.) Overlaid description boxes on the photos in the sliders and on the resources page don't display properly on mobile
-		- seperate css sheet for mobile?
-================
-25.) Tumblr Img on resource page should be in a slider
-		- limit 10
+25.) Tumblr Img on resource page should be in a slider 
+		- limit 10 most recent tumblr photo posts
 ================
 26.) Grey barG div that heads the Robot and Member page looks stupid. 
+		- its the one that contains "Member, Alumni, Mentor"
 		- Think of better way to do header with Nav
+================
+27.) Tumblr Theme
+		- we need to either
+			1.) Write a theme for the tumblr that matches the website (header, sidebar, footer)
+			2.) Create a "tumblr" template and pull all of the posts into it.
+================
+28.) Shuffle the posts on the Main Page featured slider so default images alternate with
+	 the featured posts from the blog.
+================
+***
+29.) Upload the rest of the Sponsors
+================
+***
+30.) Hunt down Alumni and get less horrible headshots
+================
+***
+31.) Michael Filipek needs to draw more robots
+		- greyscale with accent red?
