@@ -1,25 +1,23 @@
-
 A website for Nemesis Robotics
 
 ***
 Repository Setup::
 
-	htmlMockups
+htmlMockups
 	
-		Contains fully functional HTML mockups ready to be ported over to php Templates
-		for the server. When you clone the repository, you should be able to open any
-		of these in chrome/firefox and preview how the website will look live
+Contains fully functional HTML mockups ready to be ported over to php Templates for the server. When you clone the repository, you should be able to open any
+of these in chrome/firefox and preview how the website will look live
 			
-			Files that are synced on server ::
+Files that are synced on server ::
 				
-				css/main.css
-				scripts/functions.php
-				scripts/functions.js
-				images
+	css/main.css
+	scripts/functions.php
+	scripts/functions.js
+	images
 	
-	processWire templates
+processWire templates
 		
-		Final php templates to be uploaded to the server. 
+	Final php templates to be uploaded to the server. 
 	
 ***
 How to contribute::
@@ -31,13 +29,14 @@ How to contribute::
 4. After you've tested your changes, and are confident in their accuracy make a pull request
 5. Check out the ToDO list, sometimes I'll post unGit related tasks that need to be finished
 
-*make sure to set an "upstream" variable (that is me, alexiswolfish/frc2590-website.git) and fetch updates
+```
+make sure to set an "upstream" variable (that is me, alexiswolfish/frc2590-website.git) and fetch updates
 from it regularly, since I'll be constantly updating this space with new pages. If you are using the beautiful
 new Git for Windows client, it does not do this automatically, so make sure to follow the instructions on the
-"Setting up Git", and "Forking a Repo" pages to do so.*
+"Setting up Git", and "Forking a Repo" pages to do so.
+```
 
-
-*If you are push/pulling from school, navigate to your repository and set
+If you are push/pulling from school, navigate to your repository and set
 
     git config http.sslVerify false
 
