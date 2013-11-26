@@ -57,11 +57,6 @@ TODO || Manual Labor || Coders
 			- should go to paypal account
 		-snail mail instructions need to be listed somewhere
 ================
-19.) Create Resources page
-		- Links
-		- Blog posts tagged "tutorial"
-		- See OF or Processing Wiki
-================
 20.) Create Community page
 ================
 21.) Create "sub" team page
@@ -69,3 +64,9 @@ TODO || Manual Labor || Coders
 22.) Pull posts from the tumblr
 ================
 23.) Media page?
+================
+24.) Overlaid description boxes on the photos in the sliders and on the resources page don't display properly on mobile
+		- seperate css sheet for mobile?
+================
+25.) Tumblr Img on resource page should be in a slider
+		- limit 10

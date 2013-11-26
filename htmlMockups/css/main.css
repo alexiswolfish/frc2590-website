@@ -57,6 +57,12 @@
  a{
 	text-decoration:none;
 	color:#f01d0c;
+	
+	-webkit-transition:color 0.3s ease;  
+	-moz-transition:color 0.3s ease;  
+	-o-transition:color 0.3s ease;  
+	transition:color 1s ease;  
+
  }
  ul{
 	list-style:none;
@@ -306,10 +312,6 @@ aside{
 			}
 			nav a{
 				color:#a4a4a4;
-				-webkit-transition:color 0.3s ease;  
-				-moz-transition:color 0.3s ease;  
-				-o-transition:color 0.3s ease;  
-				transition:color 1s ease;  
 			}
 			nav a:hover{
 				color:#f01d0c; /*red*/
@@ -910,15 +912,20 @@ aside{
 	#resources-container a{
 		color: #a4a4a4;
 	}
+		#resources-container a:hover{
+		color:#f01d0c; /*red*/
+	}
 #blockLeft{
 	width:230px;
 	height:100%;
 	border-style:none dotted none none;
-	padding: 0 10px;
 	display:inline-block;
 	vertical-align:top;
 }
-#blockList{
+	#blockLeft img{
+		padding:0 10px;
+	}
+.blockList{
 	display:inline-block;
 	vertical-align:top;
 	padding:10px;
@@ -927,7 +934,12 @@ aside{
 	width: 220px;
 	height:290px;
 }
-
+	#noMargin{
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+	}
 #heading{
 	margin-bottom:20px;
 	border-style:none none dotted none;
@@ -935,10 +947,25 @@ aside{
 #tumblr{
 	width:500px;
 	display:inline-block;
+	padding-bottom:10px;
 }
 	#tumblr img{
 		width:500px;
 	}
+	#tumblr-desc{
+		width:500px;
+		height:50px;
+		position:absolute;
+		float:left;
+		bottom:180px;
+		
+		text-align:center;
+		color:#fff;
+		background-color:rgba(255,18,12,.8);
+	}
+		#tumblr-desc p{
+			color:#fff;
+		}
 #tutorials{
 	display:inline-block;
 	width:230px;
@@ -947,8 +974,14 @@ aside{
 	padding:10px 10px;
 
 	color:#fff;
-	background-color:rgba(255,18,12,.9);
+	background-color:rgba(255,18,12,.85);
 }
 	#tutorials #heading{
 		color: white;
+	}
+	#tutorials a{
+		color: white;
+	}
+	#tutorials a:hover{
+		color: rgb(77, 207, 219);
 	}
