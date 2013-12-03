@@ -13,30 +13,50 @@ include("./header.inc");
 					<div class="flexslider">
 					  <ul class="slides">
 						<?php
-							/*pull images attatched to slider variable on home template*/
-							foreach($page->sliderImage as $i){
-								echo "<li><img src='{$i->url}'/></li>";
+							///*pull images attatched to slider variable on home template*/
+							//foreach($page->sliderImage as $i){
+							//	echo "<li><img src='{$i->url}'/></li>";
+							//}
+							///*pull featuredImages tagged "featured"*/
+							//$featuredPages = $pages->find("featuredImage.tags=featured, limit=6, sort-=date");
+							//foreach($featuredPages as $k){
+							//	echo "<li><img src='{$k->featuredImage->url}'/>";
+							//	echo "<p class='flex-caption'>
+							//					<a class='white' href='".$k->url."'>".$k->title."</a>
+							//		  </p>";
+							//	echo "</li>";
+							//	
+							//}
+							///*pull any image tagged "featured" from the blog Sliders*/
+							//$featuredSliders = $pages->find("sliderImage.tags=featured, limit=4, sort-=date");
+							//foreach($featuredSliders as $j){
+							//	$featuredImgs = $j->sliderImage->findTag('featured');
+							//	foreach($featuredImgs as $img){
+							//		echo "<li><img src='{$img->url}'/>";
+							//		echo "<p class='flex-caption'>
+							//					<a class='white' href='".$j->url."'>".$img->description."</a></p>";
+							//		echo "</li>";
+							//	}
+							//}
+							$D = $page->sliderImage;
+							$C = array();
+							foreach($pages->find("featuredImage.tags=featured, limit=6, sort-=date") as $k){
+								$C[] = (object) ['url' => $k->featuredImage->url, 'href' => $k->url, 'desc' => $k->title];
 							}
-							/*pull featuredImages tagged "featured"*/
-							$featuredPages = $pages->find("featuredImage.tags=featured, limit=6, sort-=date");
-							foreach($featuredPages as $k){
-								echo "<li><img src='{$k->featuredImage->url}'/>";
-								echo "<p class='flex-caption'>
-												<a class='white' href='".$k->url."'>".$k->title."</a>
-									  </p>";
-								echo "</li>";
-								
-							}
-							/*pull any image tagged "featured" from the blog Sliders*/
-							$featuredSliders = $pages->find("sliderImage.tags=featured, limit=4, sort-=date");
-							foreach($featuredSliders as $j){
-								$featuredImgs = $j->sliderImage->findTag('featured');
-								foreach($featuredImgs as $img){
-									echo "<li><img src='{$img->url}'/>";
-									echo "<p class='flex-caption'>
-												<a class='white' href='".$j->url."'>".$img->description."</a></p>";
-									echo "</li>";
+							foreach($pages->find("sliderImage.tags=featured, limit=4, sort-=date") as $j){
+								foreach($j->sliderImage->findTag('featured') as $img){
+									$C[] = (object) ['url' => $img->url, 'href' => $j->url, 'desc' => $img->description];
 								}
+							}
+							$A = array_merge( array_slice($D,1), $C );
+							shuffle($A);
+							array_unshift($A, $D[0]);
+							foreach($A as $value){
+								echo "<li><img src='{$value->url}' />";
+								if(property_exists($value, "href")){
+									echo "<p class='flex-caption'><a class='white' href='".$value->href."'>".$value->desc."</a></p>";
+								}
+								echo "</li>";
 							}
 						?>
 					  </ul>
