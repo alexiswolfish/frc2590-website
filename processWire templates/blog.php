@@ -61,6 +61,7 @@ include("./header.inc");
 				?>
 				<!--replace image url with bgImage CSS attributes-->
 				
+
 				
 				<script>
 					cssBackground("featuredImage");

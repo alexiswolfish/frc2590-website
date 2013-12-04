@@ -68,7 +68,7 @@ include("./header.inc");
 					<h3>Mentions</h3>
 					<!-- Search Blog Post Tags for name-->
 					<?php
-						$selector = "parent=/blog/, sort=-date, limit=10, tags*=".$page->lastName;
+						$selector = "parent=/blog/, sort=-date, limit=5, tags*=".$page->lastName;
 						$matches = $pages->find($selector);
 						echo "<ul>";
 						foreach($matches as $match){

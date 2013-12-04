@@ -5,19 +5,138 @@
 include("./header.inc");
 ?>
 	<div id="main" class="container">
-
 		<div id="content">		
-			<div id="blockLeft" class="border">
-					<img src="<?php echo $config->urls->templates; ?>images/build.jpg" width="200px">
-					<div id="fields">
-						<p>Here is a space where you can talk in length about the build team blah blah blah
-						build team blah blah blah they don't realize that our kids are cadding that they can
-						create cool things cause they can use the CAD blah blah blah kids these days amIright</p>
+			<div id="team-container" class="border">
+					<div id="teamHeader">
+						<div class="flexslider">
+							<ul class="slides">
+							<?php
+								foreach($page->sliderImage as $i){
+								echo "<li><img src='{$i->url}'/></li>";
+							}
+							?>
+							</ul>
+						</div>
+						<div id="teamLabel">
+							<h1 class="white"> <?php echo $page->title ?></h1>
+						</div>
 					</div>
+				<div class="teamBlock">
+					<div id="blockLeft" class="border">
+							<!--<img src="<?php echo $config->urls->templates; ?>images/build.jpg" width="200px">-->
+							<div id="post-header"><h2><b>Who we are</b></h2></div>
+								<p>Here is a space where you can talk in length about the build team blah blah blah
+								build team blah blah blah they don't realize that our kids are cadding that they can
+								create cool things cause they can use the CAD blah blah blah kids these days amIright</p>
+								<p>Morbi auctor tempus gravida. Vivamus hendrerit ac sapien vitae sollicitudin. Suspendisse eget risus in velit ultrices fermentum nec ultrices nisi. Vestibulum metus tellus, ornare nec ante at, condimentum eleifend arcu. .</p>
+					</div>
+					<div id="mentorBlock" class="border">
+						<div id="post-header"><h2 class="red">Build Team Mentors</h2></div>
+						<?php
+							$mentors = $pages->find("mentor=1, sort=class, Build_Team=1");
+							foreach($mentors as $mentor){
+								echo "<div class='person'>
+											<a href='$mentor->url' title='$mentor->shortBio' class='bio'><span title='More'>
+												<div id='profile' name='profile'>";
+								echo $mentor->profile->url;
+								echo "			</div></span></a>
+											<div id='fields'>";
+								echo "			<a href='$mentor->url'><h3>$mentor->title</h3></a>";
+								if(($mentor->job)!=null){echo "<div id='profession'>$mentor->job</div>";}
+								echo "		</div>
+										</div>
+									</a>";
+							}
+						?>
+					</div><!--blockLarge-->
+				</div>
+				<div class="teamBlock">
+					<div id="blockLarge">
+					<?php
+						$featuredPosts = $pages->find("parent=/blog/, tags*='build team', limit=2, sort=-date");
+						foreach($featuredPosts as $post){
+							echo "<div class='featured' >";
+							echo "<a href='$post->url'><div id='blogImg-container' name='featuredImage'>".($post->featuredImage->url)."</div></a>";
+							echo "<div id='fields'><div id='details' class='grey'>{$post->date}</div>
+								  <a href='$post->url'><h3>$post->title</h3></a>";
+							echo "<div class='grey'><a class='grey' href='".($post->author->url)."'>".($post->author->title)."</a></div>";
+							echo "</a></div></div>";
+						}
+					?>
+					</div><!--blockFull-->
+					<div id="blockSmall" class="border">
+						<h2 id="heading" class="border"><b>From the Blog</b></h2>
+						<ul>
+						<?php
+						$otherPosts = $pages->find("parent=/blog/, template=blogPost, tags*='build team', start=2, limit=8; sort=-date");
+						foreach($otherPosts as $post){
+								echo "<li><a class='grey' href='{$post->url}' class='linkDesc'>{$post->title}</a></li>";
+							}
+						?>
+						</ul>
+					</div>
+				</div>
+				<!--<div class="teamBlock">-->
+					<div id="tumblr">
+					<?php 
+					/*Retrieve latest post from the tumblr*/
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0&num=4&type=photo&tagged=buildTeam";
+						$xml = simplexml_load_file($request_url);
+						foreach($xml->posts->post as $post){
+							$title = $post->{'photo-caption'};
+							$postURL = $post['url'];
+							$photoURL = $post->{'photo-url'};
+							echo"<div class='tumblr'>
+									<a href='".$postURL."'>
+										<img src='".$photoURL."'>
+									</a>
+								 ";
+							if($title != ""){
+								echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
+										".$title."
+									  </a></div>";
+							}
+							echo"</div>";
+						}
+					?>
+					</div>
+				<!--</div>-->
+				<div class="teamBlock">
+					<div id="post-header"><h2 class="red"><div id="members"><b>The <?php echo $page->title ?></b></div></h2></div>
+					<?php
+					/*Pull all member pages with a graduation year within four years
+					  of the current year*/
+					$curMembers;
+					/*NOTE edit so that team variable comes from title*/
+					$year = intval(date("Y"));
+					$curMonth = intval(date("m"));
+					if($curMonth >= 8){
+						$curMembers = $pages->find("template=member, mentor=0, class>$year, Build_Team=1, sort=class, sort=lastName");
+					}
+					else{
+						$curMembers = $pages->find("template=member, mentor=0, class>=$year, Build_Team=1, sort=class, sort=lastName");
+					}
+					foreach($curMembers as $member){
+							echo "<div class='person'>";
+							echo "<a href='$member->url' title='$member->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
+							echo $member->profile->url;
+							echo "</div></span></a><div id='fields'>";
+							echo "<a href='$member->url'><h3>$member->title</h3></a>";
+							echo "<div id='status'>";
+							printStatus($member);
+							echo "</div><div id='team'>";
+							printTeam($member);
+							echo "</div></div></div>";
+						}
+					?>
+				</div>
 			</div>
-			<div id="post-header"><h2 class="red">Build Team Mentors</h2></div>
 		</div><!--content-->
 		
+		<script>
+			cssBackground("profile");
+			cssBackground("featuredImage");
+		</script>
 		<aside id="sidebar">
 			
 			<!-- include sidebar from template file-->
@@ -32,7 +151,6 @@ include("./header.inc");
 			</section>
 			
 		</aside> <!-- sidebar -->
-		
 	</div> <!--container-->
 <?php
 include("./footer.inc");
