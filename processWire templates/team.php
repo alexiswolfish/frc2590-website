@@ -25,15 +25,13 @@ include("./header.inc");
 					<div id="blockLeft" class="border">
 							<!--<img src="<?php echo $config->urls->templates; ?>images/build.jpg" width="200px">-->
 							<div id="post-header"><h2><b>Who we are</b></h2></div>
-								<p>Here is a space where you can talk in length about the build team blah blah blah
-								build team blah blah blah they don't realize that our kids are cadding that they can
-								create cool things cause they can use the CAD blah blah blah kids these days amIright</p>
-								<p>Morbi auctor tempus gravida. Vivamus hendrerit ac sapien vitae sollicitudin. Suspendisse eget risus in velit ultrices fermentum nec ultrices nisi. Vestibulum metus tellus, ornare nec ante at, condimentum eleifend arcu. .</p>
+								<?php echo $page->postContent; ?>
 					</div>
 					<div id="mentorBlock" class="border">
-						<div id="post-header"><h2 class="red">Build Team Mentors</h2></div>
+						<div id="post-header"><h2 class="red"><?php echo $page->title ?> Mentors</h2></div>
 						<?php
-							$mentors = $pages->find("mentor=1, sort=class, Build_Team=1");
+							$teamVar = str_replace(" ", "_", $page->title);
+							$mentors = $pages->find("mentor=1, sort=class, $teamVar=1");
 							foreach($mentors as $mentor){
 								echo "<div class='person'>
 											<a href='$mentor->url' title='$mentor->shortBio' class='bio'><span title='More'>
@@ -53,7 +51,7 @@ include("./header.inc");
 				<div class="teamBlock">
 					<div id="blockLarge">
 					<?php
-						$featuredPosts = $pages->find("parent=/blog/, tags*='build team', limit=2, sort=-date");
+						$featuredPosts = $pages->find("template=blogPost, tags*='$page->title', limit=2, sort=-date");
 						foreach($featuredPosts as $post){
 							echo "<div class='featured' >";
 							echo "<a href='$post->url'><div id='blogImg-container' name='featuredImage'>".($post->featuredImage->url)."</div></a>";
@@ -68,7 +66,7 @@ include("./header.inc");
 						<h2 id="heading" class="border"><b>From the Blog</b></h2>
 						<ul>
 						<?php
-						$otherPosts = $pages->find("parent=/blog/, template=blogPost, tags*='build team', start=2, limit=8; sort=-date");
+						$otherPosts = $pages->find("template=blogPost, tags*='$page->title', start=2, limit=8; sort=-date");
 						foreach($otherPosts as $post){
 								echo "<li><a class='grey' href='{$post->url}' class='linkDesc'>{$post->title}</a></li>";
 							}
@@ -80,7 +78,8 @@ include("./header.inc");
 					<div id="tumblr">
 					<?php 
 					/*Retrieve latest post from the tumblr*/
-						$request_url = "http://frc2590.tumblr.com/api/read?start=0&num=4&type=photo&tagged=buildTeam";
+						$teamVar = str_replace(" ", "", $page->title);
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0&num=4&type=photo&tagged={$teamVar}";
 						$xml = simplexml_load_file($request_url);
 						foreach($xml->posts->post as $post){
 							$title = $post->{'photo-caption'};
@@ -88,7 +87,7 @@ include("./header.inc");
 							$photoURL = $post->{'photo-url'};
 							echo"<div class='tumblr'>
 									<a href='".$postURL."'>
-										<img src='".$photoURL."'>
+										<div id='tumblrImg' class='bgReplace' name='tumblrImg'>{$photoURL}</div>
 									</a>
 								 ";
 							if($title != ""){
@@ -106,15 +105,16 @@ include("./header.inc");
 					<?php
 					/*Pull all member pages with a graduation year within four years
 					  of the current year*/
+					$teamVar = str_replace(" ", "_", $page->title);
 					$curMembers;
 					/*NOTE edit so that team variable comes from title*/
 					$year = intval(date("Y"));
 					$curMonth = intval(date("m"));
 					if($curMonth >= 8){
-						$curMembers = $pages->find("template=member, mentor=0, class>$year, Build_Team=1, sort=class, sort=lastName");
+						$curMembers = $pages->find("template=member, mentor=0, class>$year, {$teamVar}=1, sort=class, sort=lastName");
 					}
 					else{
-						$curMembers = $pages->find("template=member, mentor=0, class>=$year, Build_Team=1, sort=class, sort=lastName");
+						$curMembers = $pages->find("template=member, mentor=0, class>=$year, {$teamVar}=1, sort=class, sort=lastName");
 					}
 					foreach($curMembers as $member){
 							echo "<div class='person'>";
@@ -125,7 +125,7 @@ include("./header.inc");
 							echo "<div id='status'>";
 							printStatus($member);
 							echo "</div><div id='team'>";
-							printTeam($member);
+							printTeam($member, $pages);
 							echo "</div></div></div>";
 						}
 					?>
@@ -136,6 +136,7 @@ include("./header.inc");
 		<script>
 			cssBackground("profile");
 			cssBackground("featuredImage");
+			cssBackground("tumblrImg");
 		</script>
 		<aside id="sidebar">
 			
@@ -149,7 +150,14 @@ include("./header.inc");
 				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
 				</p>
 			</section>
-			
+						<?php
+				echo "<nav><ul>";
+				$teamPages = $pages->find("template=team");
+				foreach( $teamPages as $p){
+					echo "<li><h3><a class='red' href='{$p->url}'>{$p->title}</a></h3></li>";
+				}
+				echo "</ul></nav>"
+			?>
 		</aside> <!-- sidebar -->
 	</div> <!--container-->
 <?php

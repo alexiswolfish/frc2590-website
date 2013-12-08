@@ -512,6 +512,9 @@ aside{
     position: absolute;
     z-index: 99;
 }
+#teamNav li{
+	padding-bottom:10px;
+}
 /* ======================================================*/
 /* Blog Home */
 #blog-container{
@@ -1068,7 +1071,8 @@ aside{
 		margin-bottom:10px;
 	}
 	#team-container #blockLeft{
-		height:379px;
+		min-height:379px;
+		/* height:379px; */
 	}
 	/*Slider Div*/
 	#team-container .flex-viewport{
@@ -1122,7 +1126,7 @@ aside{
 	display:inline-block;
 	vertical-align:top;
 	padding-left:10px;
-	width: 518px;
+	width: 515px;
 	padding-bottom:10px;
 }
 	#mentorBlock .person{
@@ -1171,4 +1175,12 @@ aside{
 	font-size:14px;
 	border-style:none none none dotted;
 	padding-left:15px;
+}
+
+#tumblrImg{
+	width:380px;
+	height:300px;
+}
+.tumblr{
+	height:300px;
 }

@@ -1,10 +1,9 @@
 <?php
+	
 /*functions.php
  *
  * Use this space to store PHP function used across the entire site
  */
- 
-
  /* Print Status
   *
   * Print the "status" of a current team member, be it 
@@ -23,31 +22,37 @@
   * args : pointer to MEMBER object/page
   * output: prints formatted Team names directly to page
   */
- function printTeam($page){
+ function printTeam($page, $pages){
 	$spacer = '<div class=\'red\'> | </div>';
 	$mult = false;
 	if($page->Build_Team){
-		echo "Build Team";
+		$build = $pages->get("title=Build Team");
+		echo "<a class='grey' href='{$build->url}'>Build Team</a>";
+		
 		$mult = true;
 	}
 	if($page->Finance_Team){
 		if($mult){ echo $spacer;}
-		echo "Finance Team";
+		$finance = $pages->get("title=Finance Team");
+		echo "<a class='grey' href='{$finance->url}'>Finance Team</a>";
 		$mult = true;
 	}
 	if($page->Marketing_Team){
 		if($mult){ echo $spacer;}
-		echo "Marketing Team";
+		$team= $pages->get("title=Marketing Team");
+		echo "<a class='grey' href='{$team->url}'>Marketing Team</a>";
 		$mult = true;
 	}
 	if($page->Software_Team){
 		if($mult){echo $spacer;}
-		echo "Software Team";
+		$team= $pages->get("title=Software Team");
+		echo "<a class='grey' href='{$team->url}'>Software Team</a>";
 		$mult =true;
 	}
 	if($page->Web_Team){
 		if($mult){echo $spacer;}
-		echo "<div class='red'>Web Team</div>";
+		$team= $pages->get("title=Web Team");
+		echo "<a class='grey' href='{$team->url}'>Web Team</a>";
 	}
  }
  

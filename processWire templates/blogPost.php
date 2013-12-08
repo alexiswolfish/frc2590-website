@@ -16,7 +16,7 @@ include("./header.inc");
 				<div id ="status" class="grey">
 					<?php printStatus($page->author)?>
 				</div>
-				<div id ="team" class="grey"><?php printTeam(($page->author)); ?></div>
+				<div id ="team" class="grey"><?php printTeam(($page->author), $pages); ?></div>
 				<?php 
 					// If the page is editable, then output a link that takes us straight to the page edit screen:
 					if($page->editable()) {
