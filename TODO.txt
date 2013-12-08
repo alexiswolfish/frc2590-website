@@ -64,19 +64,17 @@ TODO || Manual Labor || Coders
 			1.) Write a theme for the tumblr that matches the website (header, sidebar, footer)
 			2.) Create a "tumblr" template and pull all of the posts into it.
 ================
-28.) Shuffle the posts on the Main Page featured slider so default images alternate with
-	 the featured posts from the blog.
-================
 ***
 29.) Upload the rest of the Sponsors
 ================
 ***
 30.) Hunt down Alumni and get less horrible headshots
-================
-***
-31.) Michael Filipek needs to draw more robots
-		- greyscale with accent red?
+
 ================
 32.) Fix Tooltips on member page
 		- they should work with pure CSS solution used on resources page
 		- don't use the title field to eliminate double tooltip.
+================
+33.) Make Vector Nemesis for Scott
+================
+34.) Make all the reds the bumper color
