@@ -14,6 +14,32 @@ function cssBackground(divName){
 	}
 }
 
+function cssSponsorBackground(divName, divId){
+	var images = document.getElementsByName(divName);
+	var sponsorWidth = document.getElementById(divId).clientWidth;
+	for( var i=0; i<images.length; i++){
+		//add url css syntax
+		var url = "url('";
+		url = url.concat(images[i].innerHTML);
+		url = url.concat("')");
+		
+		//set the background image
+		images[i].style.backgroundImage = url;
+		
+		//sponsor image size check
+		var bg = new Image();
+		bg.src = images[i].innerHTML;
+		
+		if( sponsorWidth < bg.width){
+			images[i].style.backgroundSize = 'contain';
+		}
+		
+		//remove wonky placeholder
+		images[i].innerHTML="";
+		
+	}
+}
+
 /* Get Background size
  * get the size of like, a background image.
  *

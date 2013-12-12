@@ -71,5 +71,12 @@
 					<h3>".$page->title."</h3>
 				</div>";
 	echo "</a></div>";
+	
+	if(<?php echo $page->profile->width?> > 314){
+		echo "<script>
+		var logo = document.getElementById('sponsor-logo');
+		logo.style.backgroundSize = 'contain';
+		</script>
+	}
   }
 ?>
