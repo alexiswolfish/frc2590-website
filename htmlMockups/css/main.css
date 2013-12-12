@@ -816,6 +816,9 @@ aside{
 		height:8.43em;
 		width:100%;
 	}
+	#robots-container #tumblr{
+		width:100%;
+	}
 	.robot-small{
 		width:248px;
 		display:inline-block;

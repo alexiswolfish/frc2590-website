@@ -74,7 +74,6 @@ TODO || Manual Labor || Coders
 32.) Fix Tooltips on member page
 		- they should work with pure CSS solution used on resources page
 		- don't use the title field to eliminate double tooltip.
-================
-33.) Make Vector Nemesis for Scott
+
 ================
 34.) Make all the reds the bumper color

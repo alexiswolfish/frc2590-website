@@ -69,9 +69,9 @@ include("./header.inc");
 					?>
 			</div>
 		</div><!--content-->
-		
+
 		<script>
-			cssBackground("profile");
+			cssSponsorBackground("profile", "sponsor-logo");
 		</script>
 
 		<aside id="sidebar">

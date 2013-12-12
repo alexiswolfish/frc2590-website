@@ -91,9 +91,12 @@ include("./header.inc");
 									</a>
 								 ";
 							if($title != ""){
-								echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
+								//description in a normal field block
+								echo "<div id='fields'><a href='{$postURL}'>".$title."</a></div>";
+								//description on a red transparency
+								/*echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
 										".$title."
-									  </a></div>";
+									  </a></div>";*/
 							}
 							echo"</div>";
 						}

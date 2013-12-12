@@ -24,7 +24,7 @@ include("./header.inc");
 							<?php echo $page->title ?>
 						</div>
 						<div id="website">
-							<a class="grey" href="<?php echo $page->website ?>">visit their website</a>
+							<a class="grey" target='_blank' href="<?php echo $page->website ?>" >visit their website</a>
 						</div>
 					</div>
 				</div>
