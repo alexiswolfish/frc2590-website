@@ -118,6 +118,7 @@ include("./header.inc");
 			</div><!--robot container -->
 		<script>
 			cssBackground("profile");
+			cssBackground("tumblrImg");
 		</script>
 				
 		</div><!--content-->

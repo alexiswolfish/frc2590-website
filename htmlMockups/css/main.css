@@ -681,6 +681,14 @@ aside{
 			#robot-container .flexslider:hover .flex-next { 
 				 right: 50px; 
 			}
+		#robot-container .tumblr{
+			display:inline-block;
+			width:380px;
+			padding: 10px 5px;
+		}
+		#robot-container #tumblrImg{
+			margin-bottom:10px;
+		}
 	/*----------------------*/
 	#articles li{
 		margin-bottom:10px;
@@ -819,6 +827,7 @@ aside{
 	#robots-container #tumblr{
 		width:100%;
 	}
+	
 	.robot-small{
 		width:248px;
 		display:inline-block;
@@ -1182,8 +1191,5 @@ aside{
 
 #tumblrImg{
 	width:380px;
-	height:300px;
-}
-.tumblr{
 	height:300px;
 }
