@@ -8,18 +8,31 @@ include("./header.inc");
 		<div id="content">		
 			<div id="team-container" class="border">
 					<div id="teamHeader">
-						<div class="flexslider">
-							<ul class="slides">
-							<?php
-								foreach($page->sliderImage as $i){
-								echo "<li><img src='{$i->url}'/></li>";
+						<?php
+							// if we are using an interactive code header
+							if($page->canvas == 1){
+								echo "<div id='canvasHeader'>";
+								echo "<canvas data-processing-sources='".$config->urls->templates."scripts/processing/JimHarris_SoftwareTeam.pde'></canvas>";
+								echo "<div id='teamLabel'>
+										<h1 class='white'>{$page->title}</h1>
+									</div></div>";
 							}
-							?>
-							</ul>
-						</div>
-						<div id="teamLabel">
-							<h1 class="white"> <?php echo $page->title ?></h1>
-						</div>
+							// static flexslider header
+							else{
+								echo "
+									<div class='flexslider'>
+										<ul class='slides'>
+									 ";
+								foreach($page->sliderImage as $i){
+									echo "<li><img src='{$i->url}'/></li>";
+								}
+								echo "</ul>
+									</div>
+									<div id='teamLabel'>
+										<h1 class='white'>{$page->title}</h1>
+									</div>";
+							}
+						?>
 					</div>
 				<div class="teamBlock">
 					<div id="blockLeft" class="border">

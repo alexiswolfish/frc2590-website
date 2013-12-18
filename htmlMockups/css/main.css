@@ -1128,6 +1128,9 @@ aside{
 	color:#fff;
 	background-color:rgba(255,18,12,.9);
 }
+	#canvasHeader #teamLabel{
+		top:-240px;
+	}
 .teamBlock{
 	padding: 10px 0;
 		border-color: #d6d6d6;
