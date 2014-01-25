@@ -30,11 +30,10 @@ include("./header.inc");
 					echo ($post->title)."</h3><p>".($post->postContent)."</p></div></a></div>";
 				}
 				
-				/*Find Archive posts*/
+				/*Find Archieve posts*/
 				echo "<div id='bar'><h3 class='white'>Archive</h3></div>";
 				
 				$archive = $pages->find("parent=/blog/, sort=-date" );
-				
 				$fCount = 0;
 				$rCount = 0;
 				foreach($archive as $post){
@@ -51,7 +50,6 @@ include("./header.inc");
 						}
 					}
 				}
-				
 				function echoArchive($post){
 					/* Print out the proper html to display an archive post*/
 					echo "<div class='archive'><a href='".($post->url)."'><div id='blogImg-container' name='featuredImage'>".($post->featuredImage->url)."</div>";
@@ -63,7 +61,6 @@ include("./header.inc");
 				?>
 				<!--replace image url with bgImage CSS attributes-->
 				
-
 				
 				<script>
 					cssBackground("featuredImage");
@@ -81,7 +78,50 @@ include("./header.inc");
 			<section>
 			<h3>Archive</h3>
 			</section>
+			<ul>
+				<style type="text/css">
+					.mC {margin:5px;}
+					.mC h5 {cursor:pointer; font-weight:bold; border-top:1px;}
+					.mC ul {display:none; margin-bottom:10px; list-style:none;}
+				</style>
+				<div class= "mC">
+					<?php
+						$blogs = $pages->get("/blog/");
+						$startYear = date("Y"); 
+						$endYear = 2008; 
+						$now = time();
+						for($year = $startYear; $year >= $endYear; $year--) {
+							echo "<h5 id='menu$year'>$year</h5><ul>";
+							$nextYear = $year+1;
+							$entries=$pages->find("template=blogPost,date>=01/01/$year,date<01/01/$nextYear, sort=-date");
+							foreach($entries as $entry){
+								echo "<li><a href='".$entry->url."'>-".$entry->title."</a></li>";
+							}
+							echo "</ul>";
+						}
+						echo "<script>
+	// unobtrusive collapsible menu
+	// copyright Stephen Chapman http://javascript.about.com
+	// 17th May 2008
+	//
+	// you may use this script on your site provided that
+	// the copyright notice is retained unaltered.
+	function toggleMenu(objID) {
+		if (!document.getElementById) return;
+		var ob = document.getElementById(objID).nextSibling;
+		ob = ob.style ? ob.style : ob.nextSibling.style;
+		ob.display = (ob.display == 'block')?'none': 'block';
+	}
+	var i = 2008;
+	while(document.getElementById('menu'+i)) {
+		document.getElementById('menu'+i).onclick= new Function(\"toggleMenu('menu\"+i+\"')\");
+		i++;
+	}
+</script>";
+					?>
+				</div>
 			
+			</ul>
 		</aside> <!-- sidebar -->
 		
 	</div> <!--container-->

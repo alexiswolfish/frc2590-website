@@ -7,9 +7,9 @@ include("./header.inc");
 	<div id="main" class="container">
 
 		<div id="content">		
-			
-			
-			
+			<div id="main-container">
+				<?php echo $page->body ?>
+			</div>
 		</div><!--content-->
 		
 		<aside id="sidebar">

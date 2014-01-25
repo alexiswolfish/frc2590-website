@@ -6,7 +6,8 @@ include("./header.inc");
 ?>
 	<div id="main" class="container">
 
-		<div id="content">	
+		<div id="content">
+			<div id="blogPost-container">
 			<div id ="author">
 				<div id ="profile"></div>
 					<script>
@@ -36,19 +37,29 @@ include("./header.inc");
 				<div id ="post-content">
 					<?php
 					/*display featured image. If slider is not empty, display slider instead*/
-						if($page->featuredImage && ($page->sliderImage.length <= 0)){
+						if($page->featuredImage && (count($page->sliderImage) == 0)){
 							echo "<div id='featured'><img src='".$page->featuredImage->url." '></div>";
+							echo "<div id='blogPost'>".$page->postContent."</div>";
+							echo "</div></div><!--post-->";
 						}
 						else if($page->sliderImage){
+							echo "<div id='blogPost'>".$page->postContent."</div>";
+							//end post after text, so slider appears below
+							echo "</div></div><!--post-->";
+							
+							
 							echo"<div class='flexslider'><ul class='slides'>";
+									if($page->featuredImage->width >= 790){
+										echo "<li><img src='{$page->featuredImage->url}'/></li>";
+									}
 									foreach($page->sliderImage as $i){
 										echo "<li><img src='{$i->url}'/></li>";
 									}
 							echo"</ul></div><!--flexSlider-->";
 						}
-						echo "<div id='blogPost'>".$page->postContent."</div>";
+						
 					?>
-				</div>
+				
 					<script>
 						/*change height of the slider if the sliderHeight variable is filled*/
 						if( (<?php ($page->sliderHeight) ?>) != null){
@@ -56,7 +67,7 @@ include("./header.inc");
 						}
 					</script>
 				
-			</div><!--post-->
+		</div><!--blogPost-container-->
 		</div><!--content-->
 		
 		<aside id="sidebar">

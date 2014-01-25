@@ -50,8 +50,8 @@ include("./header.inc");
 									$C[] = (object) ['url' => $img->url, 'href' => $j->url, 'desc' => $img->description];
 								}
 							}
-							foreach($pages->sliderImage as $x){
-								$D[] = (object) ['url' => $x->url, 'href' => $x->url, 'desc' => $x->title];
+							foreach($page->sliderImage as $x){
+								$D[] = (object) ['url' => $x->url];
 							}
 							
 							$A = array_merge( (array)array_slice($D,1), (array)$C );
@@ -66,17 +66,18 @@ include("./header.inc");
 								echo "</li>";
 							}
 							
-							//Alex debug
+							//Alex debug 
 							echo "</ul>
 								</div><!--flexSlider-->
 								</div> <!--flexSlider-container-->";
-								
-							echo "hihihi A: ".count($A)." D: ".count($D)." C: ".count($C)." </br>";
-								foreach( $page->sliderImage->slice(1) as $i)
-								{
-									 echo $i->url."</br>";
-								}
-
+							
+							//MKH: delete after debug please
+							//echo "hihihi A: ".count($A)." D: ".count($D)." C: ".count($C)." </br>";
+							//	foreach( $page->sliderImage->slice(1) as $i)
+							//	{
+							//		 echo $i->url."</br>";
+							//	}
+							//echo "<pre>"; var_dump($page->sliderImage); echo "</pre>";
 							
 						?>
 
@@ -86,7 +87,7 @@ include("./header.inc");
 						<?php
 							$robot= $pages->find("parent=/robots/, limit=1, sort=-year");
 							$robot=$robot[0];
-							echo "<a class='white' href='".($robot->url)."'><div class='label' id='robot-label'>current robot: ".($robot->title)."</div>";
+							echo "<a class='white' href='".($robot->url)."'><div class='label' id='robot-label'>featured robot: ".($robot->title)."</div>";
 							echo "<div id='robotImage' class='bgReplace' name='robotImage'>".($robot->profile->url)."</div></a>";
 						?>
 					</section>

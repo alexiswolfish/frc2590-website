@@ -90,7 +90,7 @@ include("./header.inc");
 				<div id="tumblr">
 					<?php 
 					/*Retrieve latest post from the tumblr*/
-						$request_url = "http://frc2590.tumblr.com/api/read?start=0&type=photo&tagged={$page->title}";
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0&type=photo&tagged={$page->year}";
 						$xml = simplexml_load_file($request_url);
 						foreach($xml->posts->post as $post){
 							$title = $post->{'photo-caption'};
