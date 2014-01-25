@@ -147,7 +147,7 @@
 		}
 	#logo{
 		position:absolute;
-		margin-left:830px;
+		margin-left:840px;
 		top:35px;
 		z-index:1;
 	}
@@ -171,7 +171,8 @@
  #content{
 	float: left;
 	vertical-align:top;
-	width:75%;
+	width:840px;
+	/*width:75%;*/
 	height:100%;
 }
 #flexslider-container{
@@ -207,7 +208,7 @@
 	margin-bottom:50px;
 }
 #spacer{
-	margin-right:30px;
+	margin-right:27px;
 }
 #content section{
 	width:376px;
@@ -280,7 +281,7 @@ aside{
 	vertical-align: top;
 }
 	#sidebar{
-		padding: 150px 30px 0 0px;
+		padding: 150px 20px 0 0px;
 		width: 240px;
 	}
 	#sidebar img{
@@ -545,10 +546,12 @@ aside{
 	.featured:hover{
 	background-color:rgba(228,239,246,0.8);
 	}
+	.featured #fields{
+		height:130px;
+	}
 	#blog-container #fields{
 		font-size:12px;
 		text-align:left;
-		height:140px;
 		overflow:hidden;
 		/*264 chara*/
 	}
@@ -573,6 +576,9 @@ aside{
 	.mostRecent #profile {
 		width:150px;
 		height:150px;
+	}
+	.mostRecent #fields {
+		height:140px;
 	}
 .archive{
 	height:200px;
@@ -599,9 +605,15 @@ aside{
 	}
 /* ======================================================*/
 /* Blog */
+#blogPost-container{
+	width:850px;
+}
+	#blogPost-container .flexslider{
+		margin-left:20px;
+		width:790px;
+	}
 #author{
 	display: inline-block;
-	width: 25%;
 	vertical-align:top;
 	padding:20px 20px 0 20px;
 	
@@ -615,6 +627,7 @@ aside{
 	width: 64%;
 	padding:20px;
 }
+
 	/* Author profile */
 	#profile{ /*circular profile image*/
 		width: 200px;
@@ -773,7 +786,7 @@ aside{
 		#about{
 			width:100%;
 			overflow:hidden;
-			height:24.14em;
+			height:24.55em;
 			line-height:1.42em;
 		}
 		.readMore{
