@@ -51,10 +51,10 @@ include("./header.inc");
 							<a href='".$postURL."'>
 								<img src='".$photoURL."'>
 							</a>
-						 </div>";
+						 ";
 					echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
 							".$title."
-						  </a></div>";
+						  </a></div></div>";
 				?>
 				</div>
 				<div class="blockList">

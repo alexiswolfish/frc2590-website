@@ -7,9 +7,32 @@ include("./header.inc");
 	<div id="main" class="container">
 
 		<div id="content">		
-			<div id="main-container">
-				<?php echo $page->body ?>
+			
+			<div id="tumblr">
+					<?php 
+						echo $config->urls->core;
+						/*Retrieve latest post from the tumblr*/
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0";
+						$xml = simplexml_load_file($request_url);
+						foreach($xml->posts->post as $post){
+							$title = $post->{'photo-caption'};
+							$postURL = $post['url'];
+							$photoURL = $post->{'photo-url'};
+							echo"<div class='tumblr'>
+									<a href='".$postURL."'>
+										<img src='{$photoURL}'>
+									</a>
+								 ";
+							if($title != ""){
+								echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
+										".$title."
+									  </a></div>";
+							}
+							echo"</div>";
+						}
+					?>
 			</div>
+			
 		</div><!--content-->
 		
 		<aside id="sidebar">

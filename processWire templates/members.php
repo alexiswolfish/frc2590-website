@@ -40,7 +40,7 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($member);
 						echo "</div><div id='team'>";
-						printTeam($member);
+						printTeam($member, $pages);
 						echo "</div></div></div>";
 					}
 				?>
@@ -57,7 +57,7 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($mentor);
 						echo "</div><div id='team'>";
-						printTeam($mentor);
+						printTeam($mentor, $pages);
 						echo "</div>";
 						if(($mentor->job)!=null){echo "<div id='profession'>$mentor->job</div>";}
 						echo "</div></div>";
@@ -85,7 +85,7 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($member);
 						echo "</div><div id='team'>";
-						printTeam($member);
+						printTeam($member, $pages);
 						echo "</div><div id='profession'>";
 						if($member->college!=null){echo $member->college; echo "</br>";}
 						if($member->job!=null){echo $member->job;}
@@ -107,6 +107,14 @@ include("./header.inc");
 				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
 				</p>
 			</section>	
+			<?php
+				echo "<nav><ul>";
+				$teamPages = $pages->find("template=team");
+				foreach( $teamPages as $p){
+					echo "<li><h3><a class='red' href='{$p->url}'>{$p->title}</a></h3></li>";
+				}
+				echo "</ul></nav>"
+			?>
 		</aside> <!-- sidebar -->	
 	</div> <!--container-->
 	

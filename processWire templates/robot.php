@@ -85,10 +85,40 @@ include("./header.inc");
 					}
 				?>
 
-				<div id="barR"> Live Blog </div>
-			</div>
+				<div id="barR"> </div>
+				
+				<div id="tumblr">
+					<?php 
+					/*Retrieve latest post from the tumblr*/
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0&type=photo&tagged={$page->year}";
+						$xml = simplexml_load_file($request_url);
+						foreach($xml->posts->post as $post){
+							$title = $post->{'photo-caption'};
+							$postURL = $post['url'];
+							$photoURL = $post->{'photo-url'};
+							echo"<div class='tumblr'>
+									<a href='".$postURL."'>
+										<div id='tumblrImg' class='bgReplace' name='tumblrImg'>{$photoURL}</div>
+									</a>
+								 ";
+							if($title != ""){
+								//description in a normal field block
+								echo "<div id='fields'><a href='{$postURL}'>".$title."</a></div>";
+								//description on a red transparency
+								/*echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
+										".$title."
+									  </a></div>";*/
+							}
+							echo"</div>";
+						}
+					?>
+					</div>
+				
+				
+			</div><!--robot container -->
 		<script>
 			cssBackground("profile");
+			cssBackground("tumblrImg");
 		</script>
 				
 		</div><!--content-->

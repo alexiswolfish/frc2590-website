@@ -26,6 +26,7 @@
 	<script src="<?php echo $config->urls->templates?>scripts/FlexSlider/jquery.flexslider-min.js"></script>
 	<script src="<?php echo $config->urls->templates?>scripts/functions.js"></script>
 	<script src="<?php echo $config->urls->templates?>scripts/scrolld.js"></script>
+	<?php if($page->canvas == 1){echo "<script src='".$config->urls->templates."scripts/processing-1.4.1.min.js'></script>";} ?>
 	<!-- php -->
 	<?php include("./scripts/functions.php"); ?>
 	

@@ -78,11 +78,16 @@
 	display:inline-block;
 	vertical-align:top;
 }
-.blue{
+.lblue{
 	color:#e4eff6;
 	display:inline-block;
 	vertical-align:top;
 	/*rgba(228,239,246,0.8)*/
+}
+.blue{
+	color:#5cbfd8;
+	display:inline-block;
+	vertical-align:top;
 }
 .white{
 	color:#fff;
@@ -142,7 +147,7 @@
 		}
 	#logo{
 		position:absolute;
-		margin-left:830px;
+		margin-left:840px;
 		top:35px;
 		z-index:1;
 	}
@@ -162,10 +167,12 @@
  #main-container{
 	padding:20px;
  }
+ 
  #content{
 	float: left;
 	vertical-align:top;
-	width:75%;
+	width:840px;
+	/*width:75%;*/
 	height:100%;
 }
 #flexslider-container{
@@ -201,7 +208,7 @@
 	margin-bottom:50px;
 }
 #spacer{
-	margin-right:30px;
+	margin-right:27px;
 }
 #content section{
 	width:376px;
@@ -274,7 +281,7 @@ aside{
 	vertical-align: top;
 }
 	#sidebar{
-		padding: 150px 30px 0 0px;
+		padding: 150px 20px 0 0px;
 		width: 240px;
 	}
 	#sidebar img{
@@ -290,6 +297,8 @@ aside{
 		border-style: solid none;
 		border-color: #f01d0c;
 		width: 240px;
+		padding:2px 0;
+		margin-bottom:10px;
 	}
 	#sidebar p{
 		width: 240px;
@@ -504,6 +513,9 @@ aside{
     position: absolute;
     z-index: 99;
 }
+#teamNav li{
+	padding-bottom:10px;
+}
 /* ======================================================*/
 /* Blog Home */
 #blog-container{
@@ -534,10 +546,12 @@ aside{
 	.featured:hover{
 	background-color:rgba(228,239,246,0.8);
 	}
+	.featured #fields{
+		height:130px;
+	}
 	#blog-container #fields{
 		font-size:12px;
 		text-align:left;
-		height:140px;
 		overflow:hidden;
 		/*264 chara*/
 	}
@@ -562,6 +576,9 @@ aside{
 	.mostRecent #profile {
 		width:150px;
 		height:150px;
+	}
+	.mostRecent #fields {
+		height:140px;
 	}
 .archive{
 	height:200px;
@@ -588,9 +605,15 @@ aside{
 	}
 /* ======================================================*/
 /* Blog */
+#blogPost-container{
+	width:850px;
+}
+	#blogPost-container .flexslider{
+		margin-left:20px;
+		width:790px;
+	}
 #author{
 	display: inline-block;
-	width: 25%;
 	vertical-align:top;
 	padding:20px 20px 0 20px;
 	
@@ -604,6 +627,7 @@ aside{
 	width: 64%;
 	padding:20px;
 }
+
 	/* Author profile */
 	#profile{ /*circular profile image*/
 		width: 200px;
@@ -670,6 +694,14 @@ aside{
 			#robot-container .flexslider:hover .flex-next { 
 				 right: 50px; 
 			}
+		#robot-container .tumblr{
+			display:inline-block;
+			width:380px;
+			padding: 10px 5px;
+		}
+		#robot-container #tumblrImg{
+			margin-bottom:10px;
+		}
 	/*----------------------*/
 	#articles li{
 		margin-bottom:10px;
@@ -754,7 +786,7 @@ aside{
 		#about{
 			width:100%;
 			overflow:hidden;
-			height:24.14em;
+			height:24.55em;
 			line-height:1.42em;
 		}
 		.readMore{
@@ -805,6 +837,10 @@ aside{
 		height:8.43em;
 		width:100%;
 	}
+	#robots-container #tumblr{
+		width:100%;
+	}
+	
 	.robot-small{
 		width:248px;
 		display:inline-block;
@@ -923,12 +959,7 @@ aside{
 		#resources-container a:hover{
 		color:#f01d0c; /*red*/
 		}
-		#resources-container a[title]:hover:after{
-			background: rgba(255,18,12,.8);
-			color: #fff;
-			z-index: 20px;
-			padding: 10px;
-		}
+
 		#resources-container a.linkDesc span{
 			display:none;
 		}
@@ -977,10 +1008,13 @@ aside{
 	border-style:none none dotted none;
 }
 #tumblr{
-	width:500px;
 	display:inline-block;
 	padding-bottom:10px;
+}
+.tumblr{
 	position: relative;
+	width:500px;
+	vertical-align:top;
 }
 	#tumblr img{
 		width:500px;
@@ -1039,3 +1073,139 @@ aside{
 		#firstLinks a.linkDesc:hover span{
 			background: rgba(102,208,234,0.9);
 		}
+/* ======================================================*/
+/* Resources */
+#team-container{
+	margin:20px;
+	border-style: none dotted none none;
+	height:100%;
+}
+	#team-container li{
+		padding:5px 0;
+	}
+		#team-container li a{
+			/*color:#a4a4a4;*/
+			color:#5cbfd8;
+		}
+		
+	#team-container .featured{
+	width:252px;
+	padding:5px;
+	}
+	#team-container #details{
+		margin-bottom:10px;
+	}
+	#team-container #blockLeft{
+		min-height:379px;
+		/* height:379px; */
+	}
+	/*Slider Div*/
+	#team-container .flex-viewport{
+		height:350px;
+		width:98%;
+	}
+	#team-container .flex-control-nav{
+		bottom: -10px;
+	}
+	
+	/*Tumblr Div*/
+	#team-container .tumblr{
+		width: 380px;
+		padding: 10px 5px;
+		display:inline-block;
+	}
+	#team-container #tumblr-desc{
+		width: 380px;
+	}
+	#team-container #tumblr{
+		width:100%;
+	}
+	#team-container #tumblr img{
+		width: 380px;
+	}
+#teamHeader{
+	position:relative;
+	height: 390px;
+	width:783px;
+
+}
+#teamLabel{
+	width:300px;
+    height: auto;
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
+	top:-280px;
+	z-index: 1;
+	text-align:center;
+	color:#fff;
+	background-color:rgba(255,18,12,.9);
+}
+	#canvasHeader #teamLabel{
+		top:-240px;
+	}
+.teamBlock{
+	padding: 10px 0;
+		border-color: #d6d6d6;
+	border-width: 2px;
+	border-style:none none dotted none;
+}
+#mentorBlock{
+	display:inline-block;
+	vertical-align:top;
+	padding-left:10px;
+	width: 515px;
+	padding-bottom:10px;
+}
+	#mentorBlock .person{
+		width:156px;
+		padding:5px;
+	}
+	#mentorBlock .person #profile{
+		width:155px;
+		height:155px;
+	}
+	#mentorBlock .bio:hover:after{
+		width:150px;
+		min-height:50px;
+		bottom:120px;
+	}
+	#mentorBlock .bio:hover:before{
+		bottom:114px;
+	}
+#blockLarge{
+	width:525px;
+	display:inline-block;
+}
+	#blockLarge #fields{
+		font-size:12px;
+		text-align:center;
+		overflow:hidden;
+		/*264 chara*/
+	}
+	#blockLarge #fields h3{
+		margin-bottom:10px;
+	}
+	#blockLarge #blogImg-container{
+		height:250px;
+	}
+/*
+#team-container #blogImg-container{
+	border-style:solid none none none;
+	border-width:5px;
+	border-color:#f01d0c;
+}*/
+#blockSmall{
+	width:230px;
+	height:390px;
+	display:inline-block;
+	vertical-align:top;
+	font-size:14px;
+	border-style:none none none dotted;
+	padding-left:15px;
+}
+
+#tumblrImg{
+	width:380px;
+	height:300px;
+}

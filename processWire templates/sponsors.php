@@ -56,22 +56,18 @@ include("./header.inc");
 							displaySponsor($sponsor);
 						}
 					?>
-				<div id="post-header"><h2 class="grey"><div id="members"> Honored Donor</div></h1></div>
+				<div id="post-header"><h2 class="grey"><div id="members"> Past Sponsors </div></h1></div>
 					<?php
 						$sponsors = $pages->find("template=sponsor, donation>0, donation<500, sort=-donation");
 						foreach($sponsors as $sponsor){
-							displaySponsor($sponsor);
-							
-						}
-					if(sizeof($sponsors) < 1){
-							echo "<i>it looks like we don't have any Honored sponsors yet. Gain this honorable title by donating today!</i>";
+							displaySponsor($sponsor);	
 						}
 					?>
 			</div>
 		</div><!--content-->
-		
+
 		<script>
-			cssBackground("profile");
+			cssSponsorBackground("profile", "sponsor-logo");
 		</script>
 
 		<aside id="sidebar">
