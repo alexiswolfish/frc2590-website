@@ -122,6 +122,8 @@ include("./header.inc");
 		</aside> <!-- sidebar -->
 		
 	</div> <!--container-->
+		
+
 <?php
 include("./footer.inc");
 ?>
