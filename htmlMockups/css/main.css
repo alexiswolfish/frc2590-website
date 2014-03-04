@@ -167,7 +167,10 @@
  #main-container{
 	padding:20px;
  }
- 
+	#main-container #flexslider-container{
+		width:785px;
+	}
+	
  #content{
 	float: left;
 	vertical-align:top;
@@ -193,7 +196,7 @@
 	display:block;
 	position: absolute;
 	float:left;
-	bottom: 100px;
+	bottom: 30px;
 	
 	padding-top:10px;
 	background: rgba(255,18,12,.6);
@@ -332,16 +335,59 @@ aside{
 			nav a:hover{
 				color:#f01d0c; /*red*/
 			}
-	
-/* this targets the default scrollbar (compulsory) 
-	doesn't affect twitter widget : therefore useless
-	
- ::-webkit-scrollbar {width: 15px;} 
- ::-webkit-scrollbar-track {background-color: #d6d6d6;}
- ::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.2);}
- ::-webkit-scrollbar-button {background-color: #575656;}
-::-webkit-scrollbar-corner {background-color: black;} */
+		.subNav{
+			padding:0 0 20px 20px;
+		}
+			.subNav li{
+				margin: 0 0 10px 0;
+			}
+			.subNav a{
+				color:#f01d0c;
+			}
+		/*Search form*/	
+		#search-container{
+			padding:20px;
+		}
+			#search-container li{
+				padding-bottom:10px;
+			}
+			#search-container .blockList{
+				padding-top:40px;
+				min-height: 150px;
+				height:auto;
+			}
+			#blogLinks{
+				height:auto;
+				width: 480px;
+			}
+		#search_form{
+			padding-bottom:15px;
+		}
+		#search_submit {
+			font-family: inherit;
+			color: white;
+			background-color: #a4a4a4;
+			text-transform: uppercase;
+		}
+		#search_query{
+			color:#a4a4a4;
+		}
+		button, input, select, textarea {
+		font-family : inherit;
+		font-size   : 100%;
+		}
 
+ /* ======================================================*/
+ /*Search */
+	#search-results{
+		padding: 20px 0 20px 50px;
+	}
+	.center{
+		margin:auto;
+		width:400px;
+		padding-top:50px;
+	}
+ 
  /* ======================================================*/
  /*Footer */
  footer{

@@ -1,9 +1,9 @@
 <?php
-	
 /*functions.php
  *
  * Use this space to store PHP function used across the entire site
  */
+ 
  /* Print Status
   *
   * Print the "status" of a current team member, be it 
@@ -17,46 +17,53 @@
 		echo "Class of ".($member->class);
 	}
  }
+ 
+ /* Print Links
+  *
+  * Print out a block of links
+  */
+  function printLinks($title, $pages){
+	echo "<div class='blockList'>
+			<h3 id='heading' class='border'><b>{$title}</b></h3>
+			<ul>";
+	foreach($pages as $page){
+		echo "<li><a href='{$page->url}' class='linkDesc'>{$page->title}</a></li>";
+	}
+	echo "</ul></div>";
+  }
  /* Print Team
   *
   * args : pointer to MEMBER object/page
   * output: prints formatted Team names directly to page
   */
- function printTeam($page, $pages){
+ function printTeam($page){
 	$spacer = '<div class=\'red\'> | </div>';
 	$mult = false;
 	if($page->Build_Team){
-		$build = $pages->get("title=Build Team");
-		echo "<a class='grey' href='{$build->url}'>Build Team</a>";
-		
+		echo "Build Team";
 		$mult = true;
 	}
 	if($page->Finance_Team){
 		if($mult){ echo $spacer;}
-		$finance = $pages->get("title=Finance Team");
-		echo "<a class='grey' href='{$finance->url}'>Finance Team</a>";
+		echo "Finance Team";
 		$mult = true;
 	}
 	if($page->Marketing_Team){
 		if($mult){ echo $spacer;}
-		$team= $pages->get("title=Marketing Team");
-		echo "<a class='grey' href='{$team->url}'>Marketing Team</a>";
+		echo "Marketing Team";
 		$mult = true;
 	}
 	if($page->Software_Team){
 		if($mult){echo $spacer;}
-		$team= $pages->get("title=Software Team");
-		echo "<a class='grey' href='{$team->url}'>Software Team</a>";
+		echo "Sotware Team";
 		$mult =true;
 	}
 	if($page->Web_Team){
 		if($mult){echo $spacer;}
-		$team= $pages->get("title=Web Team");
-		echo "<a class='grey' href='{$team->url}'>Web Team</a>";
+		echo "<div class='red'>Web Team</div>";
 	}
  }
- 
-  /* Print Sponsor
+ /* Print Sponsor
   *
   * args : pointer to Sponsor Page object
   */
@@ -72,11 +79,11 @@
 				</div>";
 	echo "</a></div>";
 	
-	if(<?php echo $page->profile->width?> > 314){
+	if($page->profile->width > 314){
 		echo "<script>
 		var logo = document.getElementById('sponsor-logo');
 		logo.style.backgroundSize = 'contain';
-		</script>
+		</script>";
 	}
   }
 ?>

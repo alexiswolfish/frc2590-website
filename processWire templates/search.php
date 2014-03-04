@@ -1,49 +1,81 @@
 <?php
+/*
+	Index Page
+*/
+include("./header.inc");
+?>
+	<div id="main" class="container">
 
-/**
- * Search template
- *
- */
+		<div id="content">		
+				<div id="search-container">
+					<?php
+					$out = '';
 
-$out = '';
+					if($q = $sanitizer->selectorValue($input->get->q)) {
 
-if($q = $sanitizer->selectorValue($input->get->q)) {
+						// Send our sanitized query 'q' variable to the whitelist where it will be
+						// picked up and echoed in the search box by the sidebar.inc file.
+						$input->whitelist('q', $q); 
 
-	// Send our sanitized query 'q' variable to the whitelist where it will be
-	// picked up and echoed in the search box by the head.inc file.
-	$input->whitelist('q', $q); 
+						// Right now I'm only searching templates that use title, postContent, and tags
+						
+						$matches = $pages->find("title|body|postContent|tags|awards~=$q, limit=50, sort=-template"); 
 
-	// Search the title, body and sidebar fields for our query text.
-	// Limit the results to 50 pages. 
-	// Exclude results that use the 'admin' template. 
-	$matches = $pages->find("title|postContent|tags|challenge~=$q, limit=50"); 
+						$count = count($matches); 
 
-	$count = count($matches); 
+						if($count) {
+							echo "<div id='heading' class='border'><h2 class='grey'>Found $count pages containing your query:</h2></div>";
+							
+							$people = $matches->find("template=member");
+							$robots = $matches ->find("template=robot");
+							$blogPosts = $matches->find("template=blogPost, sort=-date");
+							$other = $matches->find("template!=member|robot|blogPost");
+							
+							if(count($people)){
+								printLinks("people", $people);
+							}
+							if(count($robots)){
+								printLinks("robots", $robots);
+							}
+							if(count($other)){
+								printLinks("Misc", $other);
+							}
+							if(count($blogPosts)){
+								echo "<div class='blockList' id='blogLinks'><h3 id='heading' class='border'><b>Blog Posts</b></h3>
+									  <ul>";
+								foreach($blogPosts as $post){
+									echo "<li><a href='{$post->url}' class='linkDesc'>{$post->title}</a></li>";
+								}
+								echo "</ul></div>";
+							}
 
-	if($count) {
-		$out .= "<h2>Found $count pages matching your query:</h2>" . 
-			"<ul class='nav'>";
-
-		foreach($matches as $m) {
-			$out .= "<li><p><a href='{$m->url}'>{$m->title}</a><br />{$m->summary}</p></li>";
-		}
-
-		$out .= "</ul>";
-
-	} else {
-		$out .= "<h2>Sorry, no results were found.</h2>";
-	}
-} else {
-	$out .= "<h2>Please enter a search term in the search box (upper right corner)</h2>";
-}
-
-// Note that we stored our output in $out before printing it because we wanted to execute
-// the search before including the header template. This is because the header template 
-// displays the current search query in the search box (via the $input->whitelist) and 
-// we wanted to make sure we had that setup before including the header template. 
-
-include("./head.inc"); 
-
-echo $out; 
-
-include("./foot.inc"); 
+						} else {
+							echo "<h2>Sorry, no results were found.</h2>";
+							echo "<div class='center'><img width='400' src='{$config->urls->templates}images\michael_filipek_robot.jpg'></div>";
+						}
+					} else {
+						echo "<h3>Please enter a search term in the search box (below sidebar navigation)</h3>";
+					}
+					
+					?>
+				</div>
+		</div><!--content-->
+		
+		<aside id="sidebar">
+			
+			<!-- include sidebar from template file-->
+			<?php include("./sidebarNav.inc"); ?>
+			
+			<section>
+				<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team based out of Robbinsville High School in New Jersey.
+				</p>
+				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
+				</p>
+			</section>
+			
+		</aside> <!-- sidebar -->
+		
+	</div> <!--container-->
+<?php
+include("./footer.inc");
+?>

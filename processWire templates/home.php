@@ -14,40 +14,45 @@ include("./header.inc");
 					  <ul class="slides">
 						<?php
 						
-							// /*pull images attatched to slider variable on home template*/
-							// foreach($page->sliderImage as $i){
-								// echo "<li><img src='{$i->url}'/></li>";
-							// }
-							// /*pull featuredImages tagged "featured"*/
-							// $featuredPages = $pages->find("featuredImage.tags=featured, limit=6, sort-=date");
-							// foreach($featuredPages as $k){
-								// echo "<li><img src='{$k->featuredImage->url}'/>";
-								// echo "<p class='flex-caption'>
-												// <a class='white' href='".$k->url."'>".$k->title."</a>
-									  // </p>";
-								// echo "</li>";
+							/*fetch pages with featuredImages or sliderImages tagged "featured"
+							  display in main slider sorted by date, with filler images in between*/
+							$featuredSlides = $pages->find("sliderImage.tags|featuredImage.tags*=featured, limit=8, sort=-date");
+							$count = 0;
+							$sliderIndex = 0;
+							foreach($featuredSlides as $k){
+								if(($count%3 == 0) && count($page->sliderImage)){
+									$url = $page->sliderImage->eq($sliderIndex)->url;
+									echo "<li><img src='{$url}'/></li>";
+									$sliderIndex++;
+								}
 								
-							// }
-							// /*pull any image tagged "featured" from the blog Sliders*/
-							// $featuredSliders = $pages->find("sliderImage.tags=featured, limit=4, sort-=date");
-							// foreach($featuredSliders as $j){
-								// $featuredImgs = $j->sliderImage->findTag('featured');
-								// foreach($featuredImgs as $img){
-									// echo "<li><img src='{$img->url}'/>";
-									// echo "<p class='flex-caption'>
-												// <a class='white' href='".$j->url."'>".$img->description."</a></p>";
-									// echo "</li>";
-								// }
-							// }
+								if( ($k->featuredImage != NULL) && (strpos($k->featuredImage->tags, 'featured') !== false)){
+									echo "<li><img src='{$k->featuredImage->url}'/>";
+									echo "<p class='flex-caption'>
+											<a class='white' href='".$k->url."'>".$k->title."</a>
+									  </p>";
+									echo "</li>";
+								}
+								else{
+									$img = $k->sliderImage->getTag('featured');
+									echo "<li><img src='{$img->url}'/>";
+									echo "<p class='flex-caption'>
+											<a class='white' href='".$k->url."'>".$img->description."</a></p>";
+									echo "</li>";
+								}
+								$count++;
+							}
 						
+						/*
+						//Andre Randomized Slide Sort
 							$D = array();
 							$C = array();
 							foreach($pages->find("featuredImage.tags=featured, limit=6, sort=-date") as $k){
-								$C[] = (object) ['url' => $k->featuredImage->url, 'href' => $k->url, 'desc' => $k->title];
+								$C[] = (object) ['url' => $k->featuredImage->url, 'href' => $k->url, 'desc' => $k->title, 'date' => $k->date];
 							}
 							foreach($pages->find("sliderImage.tags=featured, limit=4, sort=-date") as $j){
 								foreach($j->sliderImage->findTag('featured') as $img){
-									$C[] = (object) ['url' => $img->url, 'href' => $j->url, 'desc' => $img->description];
+									$C[] = (object) ['url' => $img->url, 'href' => $j->url, 'desc' => $img->description, 'date' => $k->date];
 								}
 							}
 							foreach($page->sliderImage as $x){
@@ -65,23 +70,12 @@ include("./header.inc");
 								}
 								echo "</li>";
 							}
-							
-							//Alex debug 
-							echo "</ul>
-								</div><!--flexSlider-->
-								</div> <!--flexSlider-container-->";
-							
-							//MKH: delete after debug please
-							//echo "hihihi A: ".count($A)." D: ".count($D)." C: ".count($C)." </br>";
-							//	foreach( $page->sliderImage->slice(1) as $i)
-							//	{
-							//		 echo $i->url."</br>";
-							//	}
-							//echo "<pre>"; var_dump($page->sliderImage); echo "</pre>";
-							
+						*/
 						?>
-
-				
+						</ul>
+					</div><!--flexSlider-->
+				</div> <!--flexSlider-container-->";
+							
 				<div id="section-container">
 					<section id="spacer">
 						<?php
@@ -123,7 +117,7 @@ include("./header.inc");
 			as a vehicle for promoting science & technology. FIRST allows high 
 			school students to work side by side with professional mentors to 
 			learn skills ranging from engineering to marketing, animation and 
-			business.
+			business. <a href="<?php echo $config->urls->root; ?>first/">Learn More</a></li>  
 			</p>
 		</aside> <!-- sidebar -->
 		
