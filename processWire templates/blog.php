@@ -76,11 +76,6 @@ include("./header.inc");
 			
 			<!-- include sidebar from template file-->
 			<?php include("./sidebarNav.inc"); ?>
-
-			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
-			<section>
-			<h3>Archive</h3>
-			</section>
 			
 		</aside> <!-- sidebar -->
 		

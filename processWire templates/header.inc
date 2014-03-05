@@ -61,8 +61,9 @@
 	
 	<header id="header-home" class="container">
 		<div id="nemesis">
-			<a href="<?php echo $config->urls->root?>"><img src="<?php echo $config->urls->templates?>images/Nemesis_transparent_black.png"></a>
-			<!-- <div id="frc"><img src="<?php echo $config->urls->templates?>images/frc2590.png"></div> -->
+			<a href="<?php echo $config->urls->root?>">
+				<img src="<?php echo $config->urls->templates?>images/Nemesis_transparent_black.png">
+			</a>
 		</div>
 		<div id="logo"><a href= "<?php echo $config->urls->root?>"><img src="<?php echo $config->urls->templates?>images/logo_winged.jpg"></a></div>
 	</header>

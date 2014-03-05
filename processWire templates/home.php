@@ -16,7 +16,7 @@ include("./header.inc");
 						
 							/*fetch pages with featuredImages or sliderImages tagged "featured"
 							  display in main slider sorted by date, with filler images in between*/
-							$featuredSlides = $pages->find("sliderImage.tags|featuredImage.tags*=featured, limit=8, sort=-date");
+							$featuredSlides = $pages->find("sliderImage.tags|featuredImage.tags|tags*=featured, limit=8, sort=-date");
 							$count = 0;
 							$sliderIndex = 0;
 							foreach($featuredSlides as $k){
@@ -26,7 +26,7 @@ include("./header.inc");
 									$sliderIndex++;
 								}
 								
-								if( ($k->featuredImage != NULL) && (strpos($k->featuredImage->tags, 'featured') !== false)){
+								if( ($k->featuredImage != NULL)){
 									echo "<li><img src='{$k->featuredImage->url}'/>";
 									echo "<p class='flex-caption'>
 											<a class='white' href='".$k->url."'>".$k->title."</a>
@@ -103,13 +103,6 @@ include("./header.inc");
 			<!-- include sidebar from template file-->
 			<?php include("./sidebarNav.inc"); ?>
 
-			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
-			<section>
-			<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team 
-			based out of Robbinsville High School in New Jersey.</p>
-			<p>Founded in 2008, the students in Nemesis routinely solve challenges
-			in business, computer science, engineering, and math.</p>
-			</section>
 			<div id="first"><a href="http://www.usfirst.org/"><img src="<?php echo $config->urls->templates?>images/first.jpg" border="0"></a></div>
 			<p>
 			<a href="http://www.usfirst.org/">FIRST</a>

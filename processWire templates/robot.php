@@ -128,7 +128,6 @@ include("./header.inc");
 			<!-- include sidebar from template file-->
 			<?php include("./sidebarNav.inc"); ?>
 
-			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
 				<h3 class='grey'> Recent Articles about <?php echo $page->title ?> </h3>
 				<div id="articles">

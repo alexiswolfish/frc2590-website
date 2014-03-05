@@ -33,3 +33,10 @@
 				<input type='text' name='q' id='search_query' value='<?php echo htmlentities($input->whitelist('q'), ENT_QUOTES, 'UTF-8'); ?>' />
 				<button type='submit' id='search_submit'>Search</button>
 			</form>
+			
+			<section>
+				<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team and non-profit based out of Robbinsville High School, NJ.
+				</p>
+				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
+				</p>
+			</section>

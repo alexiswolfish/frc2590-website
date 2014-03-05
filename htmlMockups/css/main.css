@@ -54,6 +54,9 @@
 	font-size:14px;
 	margin: 0px;
  }
+ h4{
+	font-weight:300;
+ }
  a{
 	text-decoration:none;
 	color:#f01d0c;
@@ -131,11 +134,16 @@
 	#nemesis{
 		position:absolute;
 		padding-left:30px;
-		top:35px;
+		top:30px;
 		z-index:1;
 		min-width:800px;
 		height:47px;
 	}
+		#nemesis h1 {
+			margin: 0px;
+			padding: 0px;
+			display:block;
+		}
 	#frc{
 		display:inline-block;
 		vertical-align:top;
@@ -353,7 +361,7 @@ aside{
 			}
 			#search-container .blockList{
 				padding-top:40px;
-				min-height: 150px;
+				min-height: 100px;
 				height:auto;
 			}
 			#blogLinks{
@@ -593,7 +601,7 @@ aside{
 	background-color:rgba(228,239,246,0.8);
 	}
 	.featured #fields{
-		height:130px;
+		height:138px;
 	}
 	#blog-container #fields{
 		font-size:12px;
@@ -718,10 +726,13 @@ aside{
 /* ======================================================*/
 /* Robot */
 	#robot-container{
-		padding:20px 10px 20px 20px;
+		padding:20px;
 	}
 		#robot-container #spacer{
 			margin-right:10px;
+		}
+		#spacerLarge {
+			margin-right: 30px;
 		}
 		#robot-container h1{
 			letter-spacing:5px;
