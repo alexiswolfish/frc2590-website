@@ -53,19 +53,16 @@ include("./header.inc");
 										echo "<li><img src='{$page->featuredImage->url}'/></li>";
 									}
 									foreach($page->sliderImage as $i){
-										echo "<li><img src='{$i->url}'/></li>";
+										echo "<li><img src='{$i->url}'/>";
+										if($i->description != NULL){
+											echo "<p class='flex-caption'>{$i->description}</p>";
+										}
+										echo "</li>";
 									}
 							echo"</ul></div><!--flexSlider-->";
 						}
 						
 					?>
-				
-					<script>
-						/*change height of the slider if the sliderHeight variable is filled*/
-						if( (<?php ($page->sliderHeight) ?>) != null){
-							document.getElementById("profile").style.height = <?php $page->sliderHeight ?>;
-						}
-					</script>
 				
 		</div><!--blogPost-container-->
 		</div><!--content-->

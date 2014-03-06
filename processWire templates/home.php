@@ -74,7 +74,7 @@ include("./header.inc");
 						?>
 						</ul>
 					</div><!--flexSlider-->
-				</div> <!--flexSlider-container-->";
+				</div> <!--flexSlider-container-->
 							
 				<div id="section-container">
 					<section id="spacer">
@@ -95,6 +95,10 @@ include("./header.inc");
 						</script>
 					</section>
 				</div><!--section-container-->
+				<?php
+					/*Grab the four latest posts from the blog*/
+
+				?>
 			</div>
 		</div><!--content-->
 		

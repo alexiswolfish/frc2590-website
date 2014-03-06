@@ -11,7 +11,7 @@
 	<!-- metadata -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="<?php echo $config->urls->templates?>images/favicon.ico" />
-	<title>frc2590 | Team Nemesis Robotics | Robbinsville High School Robotics</title>
+	<title><?php echo $page->title ?> | FRC 2590 | Robbinsville Robotics</title>
 	
 	<meta charset="utf-8">
 	<meta name="description" content= "FRC Team 2590, Nemesis, is an award winning FIRST Robotics team 

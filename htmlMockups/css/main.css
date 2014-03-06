@@ -204,7 +204,7 @@
 	display:block;
 	position: absolute;
 	float:left;
-	bottom: 30px;
+	bottom: 45px;
 	
 	padding-top:10px;
 	background: rgba(255,18,12,.6);
@@ -431,7 +431,13 @@ aside{
 	border-width:2px;
 	overflow:hidden;
 	}
-
+ #icons img{
+	width:25px;
+ }
+ #icons li{
+	display:inline-block;
+	margin-left:3px;
+ }
 /* ======================================================*/
 /* Member */
 #member-container{
@@ -789,6 +795,7 @@ aside{
 	#stats-container{
 		display:inline-block;
 		width:50%;
+		margin-bottom:10px;
 	}
 		#robotImg {
 			width:100%;
@@ -852,6 +859,8 @@ aside{
 		}
 		#about p{
 			margin-top:0px;
+			margin-top: 0px;
+			-webkit-margin-after: 1.42em;
 		}
 	#extras{
 		padding-top:10px;
@@ -1008,6 +1017,7 @@ aside{
 		border-width: 2px;
 		margin-left:40px;*/
 		padding:4px 0;
+		padding-right: 5px;
 	}
 	#resources-container a{
 		color: #a4a4a4;

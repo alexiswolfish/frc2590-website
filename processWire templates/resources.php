@@ -64,6 +64,7 @@ include("./header.inc");
 							echo "<li><a href='{$link->link}' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
 						}
 					?></ul>
+					<?php printSMIcons($config->urls->templates); ?>
 				</div>
 				<div class="blockList" id="noMargin">
 					<h3 id="heading" class="border"><b>Software Team</b></h3>
