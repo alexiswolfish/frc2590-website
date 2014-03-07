@@ -94,13 +94,33 @@
   */
   function printSMIcons($root){
 		echo "	<div id='icons'><ul>";
-		echo "<li><a href='https://twitter.com/FRC2590'><img src='{$root}images/icons/twitter.png'></li></a>";
-		echo "<li><a href='http://frc2590.tumblr.com/'><img src='{$root}images/icons/tumblr.png'></li></a>";
-		echo "<li><a href='http://instagram.com/nemesis2590'><img src='{$root}images/icons/instagram.png'></li></a>";
-		echo "<li><a href='http://www.youtube.com/user/FRC2590'><img src='{$root}images/icons/youtube.png'></li></a>";
-		echo "<li><a href='https://www.facebook.com/frc2590'><img src='{$root}images/icons/facebook.png'></li></a>";
-		echo "<li><a href='http://www.flickr.com/photos/frc2590/sets/'><img src='{$root}images/icons/flickr.png'></li></a>";
+		echo "<li><a target='_blank' href='https://twitter.com/FRC2590'><img src='{$root}images/icons/twitter.png'></li></a>";
+		echo "<li><a target='_blank' href='http://frc2590.tumblr.com/'><img src='{$root}images/icons/tumblr.png'></li></a>";
+		echo "<li><a target='_blank' href='http://instagram.com/nemesis2590'><img src='{$root}images/icons/instagram.png'></li></a>";
+		echo "<li><a target='_blank' href='http://www.youtube.com/user/FRC2590'><img src='{$root}images/icons/youtube.png'></li></a>";
+		echo "<li><a target='_blank' href='https://www.facebook.com/frc2590'><img src='{$root}images/icons/facebook.png'></li></a>";
+		echo "<li><a target='_blank' href='http://www.flickr.com/photos/frc2590/sets/'><img src='{$root}images/icons/flickr.png'></li></a>";
 		echo "</ul></div>";
   }
   
+  /* Return Flickr Method
+   *
+   * args : Flickr Method to query
+   * returns: horrible Flickr unserialized object
+   */
+   function flickrArgs($params){
+
+		$encoded_params = array();
+
+		foreach ($params as $k => $v){
+			$encoded_params[] = urlencode($k).'='.urlencode($v);
+		}
+	
+		/*Query the API and decode*/
+		$url = "https://api.flickr.com/services/rest/?".implode('&', $encoded_params);
+		$rsp = file_get_contents($url);
+		$final = unserialize($rsp);
+		return $final;
+   }
+   
 ?>

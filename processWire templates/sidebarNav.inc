@@ -18,10 +18,10 @@
 						?>
 					<li><a href="<?php echo $config->urls->root; ?>robots/">Robots</a></li>   
 					<li><a href="<?php echo $config->urls->root; ?>blog/">Blog</a></li> 
-					<li><a href="<?php echo $config->urls->root; ?>sponsors/">Sponsors</a></li> 
-					<li><a href="<?php echo $config->urls->root; ?>calendar/">Calendar</a></li> 
 					<li><a href="<?php echo $config->urls->root; ?>resources/">Resources + Media</a></li>
 					<li><a href="<?php echo $config->urls->root; ?>awards/">Awards</a></li>	
+					<li><a href="<?php echo $config->urls->root; ?>calendar/">Calendar</a></li> 
+					<li><a href="<?php echo $config->urls->root; ?>sponsors/">Sponsors</a></li> 
 					<li><a href="<?php echo $config->urls->root; ?>first/">FIRST</a></li>  
 					
 				</ul>

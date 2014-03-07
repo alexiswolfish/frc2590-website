@@ -1276,3 +1276,23 @@ aside{
 	width:380px;
 	height:300px;
 }
+
+/* ======================================================*/
+/* Media Container */
+
+#media-container{
+	padding:20px;
+}
+	#media-container li{
+		display:inline-block;
+		margin-left:20px;
+		width:240px;
+		overflow:hidden;
+		vertical-align: top;
+	}
+	#media-container li img{
+		height:240px;
+	}
+	#media-container #blogImg-container{
+		height:240px;
+	}
