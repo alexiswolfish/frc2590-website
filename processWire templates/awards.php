@@ -10,6 +10,16 @@ include("./header.inc");
 			<div id="main-container" style="margin-right: auto; margin-left: auto; width: 386px;">
 				
 				<div style="display:block; border-style:none" id="resources-container" class="border">
+					
+					<div class="blockList" style="width:auto;height:auto">
+					     <h3 id="heading" class="border"><b>2014</b></h3>
+					     <ul><?php
+						     foreach($page->f2014awards as $link){
+							     echo "<li><a href='#' class='linkDesc'>{$link->title}<span>{$link->linkDesc}</span></a></li>";
+						     }
+					     ?></ul>
+					 </div>
+					
 					<div class="blockList" style="width:auto;height:auto">
 					    <h3 id="heading" class="border"><b>2013</b></h3>
 					    <ul><?php
