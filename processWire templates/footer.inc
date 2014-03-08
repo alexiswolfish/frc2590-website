@@ -2,10 +2,10 @@
 	<div id="stripe"></div>
 	<section style="margin:20px 0 10px 10px;width:151px;border:none;">&reg;2014 <br>FRC 2590 | Nemesis</br>Robbinsville High School</br>Robbinsville NJ</br><a href="mailto:frc2590@gmail.com?Subject=Hello%20Nemesis" target="_top">
 Contact Us</a></section>
-	<section style="margin:20px 0 10px 10px;width:200px;height:110px;">Team FRC2590 Nemesis would not be possible without the <a href="<?php echo $config->urls->root; ?>sponsors">generous donations of our top sponsors.</a> Thank you for helping us give students an outlet for their interest in engineering, math and science.</section>
 	<section style="margin:20px 0 10px 10px;width:151px;">
 		<div style="margin-left:10px;margin-top:13px;"><img src='/site/assets/files/1399/ucfirst-logo.png'/></div>
 	</section>
+	<section style="margin:20px 0 10px 10px;width:200px;height:110px;">Team FRC2590 Nemesis would not be possible without the <a href="<?php echo $config->urls->root; ?>sponsors">generous donations of our top sponsors.</a> Thank you for helping us give students an outlet for their interest in engineering, math and science.</section>
 	<?php
 		$sponsors = $pages->find("template=sponsor, sort=-donation, limit=3");
 		foreach($sponsors as $sponsor){
