@@ -40,27 +40,27 @@
 	$spacer = '<div class=\'red\'> | </div>';
 	$mult = false;
 	if($page->Build_Team){
-		echo "Build Team";
+		echo "<a class='grey' href='http://frc2590.org/members/team-pages/build-team/'>Build Team</a>";
 		$mult = true;
 	}
 	if($page->Finance_Team){
 		if($mult){ echo $spacer;}
-		echo "Finance Team";
+		echo "<a class='grey' href='http://frc2590.org/members/team-pages/finance-team/'>Finance Team</a>";
 		$mult = true;
 	}
 	if($page->Marketing_Team){
 		if($mult){ echo $spacer;}
-		echo "Marketing Team";
+		echo "<a class='grey' href='http://frc2590.org/members/team-pages/marketing-team/'>Marketing Team</a>";
 		$mult = true;
 	}
 	if($page->Software_Team){
 		if($mult){echo $spacer;}
-		echo "Sotware Team";
+		echo "<a class='grey' href='http://frc2590.org/members/team-pages/software-team/'>Sotware Team</a>";
 		$mult =true;
 	}
 	if($page->Web_Team){
 		if($mult){echo $spacer;}
-		echo "<div class='red'>Web Team</div>";
+		echo "<a class='grey' href='http://frc2590.org/members/team-pages/web-team/'>Web Team</a>";
 	}
  }
  /* Print Sponsor
