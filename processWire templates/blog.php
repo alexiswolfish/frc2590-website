@@ -33,8 +33,11 @@ include("./header.inc");
 				/*Find Archive posts*/
 				echo "<div id='bar'><h3 class='white'>Archive</h3></div>";
 				
-				$archive = $pages->find("parent=/blog/, sort=-date" );
+				$archive = $pages->find("parent=/blog/, limit=20, sort=-date" );
 				
+				$pagination = $archive->renderPager();
+				echo $pagination;
+
 				$fCount = 0;
 				$rCount = 0;
 				foreach($archive as $post){
@@ -51,6 +54,8 @@ include("./header.inc");
 						}
 					}
 				}
+				
+				echo $pagination;
 				
 				function echoArchive($post){
 					/* Print out the proper html to display an archive post*/

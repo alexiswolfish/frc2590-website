@@ -663,6 +663,10 @@ aside{
 	.archive #postContent:hover{
 		background-color:rgba(228,239,246,0.8);
 	}
+	.MarkupPagerNav li{
+		display:inline-block;
+		padding-right:5px;
+	}
 /* ======================================================*/
 /* Blog */
 #blogPost-container{
@@ -1295,4 +1299,10 @@ aside{
 	}
 	#media-container #blogImg-container{
 		height:240px;
+	}
+	#youtube{
+		width:500px;
+	}
+	#player{
+		margin-left:20px;
 	}

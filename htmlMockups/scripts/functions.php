@@ -122,5 +122,23 @@
 		$final = unserialize($rsp);
 		return $final;
    }
-   
+  /* Embed latest youtube video
+   *
+   * args : chanel name
+   */
+   function latestYoutube ($channel) {
+		// http://gdata.youtube.com/feeds/api/videos?max-results=1&orderby=published&author=frc2590
+        $feedURL = 'http://gdata.youtube.com/feeds/api/users/' . $channel . '/uploads?max-results=1';
+        $sxml = simplexml_load_file($feedURL);
+		$media = $sxml->entry->children('media', true);
+		$url = (string)$media->group->player->attributes()->url;
+		
+		//http://www.youtube.com/watch?v=ORLg1u8D2D0&feature=youtube_gdata_player
+		$index = strrpos($url, "&");
+        $url = substr($url, 0, $index);
+        $index = strrpos($url, "watch");
+        $url = substr($url, 0, $index) . "v/" . substr($url, $index + 8, strlen($url) - ($index + 8));
+		
+		echo "<iframe width='480' height='360' src='{$url}' frameborder='0' allowfullscreen></iframe>";
+}
 ?>

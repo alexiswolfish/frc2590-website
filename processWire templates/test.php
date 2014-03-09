@@ -10,6 +10,7 @@ include("./header.inc");
 			<div id="media-container">
 				<h2 id='heading' class='border'><a href='http://www.flickr.com/photos/frc2590/sets/'><b>Latest Flickr Galleries</b></a></h2>
 				<?php
+					/* FLICKR */
 					/*n-1 because hurr durr*/
 					$numPhotosets = 2;
 					
@@ -71,8 +72,15 @@ include("./header.inc");
 						}
 						echo "</ul>";
 					}
+					?>
+					<div id="youtube">
+						<h2 id='heading' class='border'><b>Videos</b></h2>
+						<div id="player">
+						<?php latestYoutube('frc2590'); ?>
+						</div>
+					</div>
 					
-				?>
+				
 			</div><!--media-container-->
 		</div><!--content-->
 		<script>

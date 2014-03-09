@@ -22,7 +22,6 @@
 					<li><a href="<?php echo $config->urls->root; ?>awards/">Awards</a></li>	
 					<li><a href="<?php echo $config->urls->root; ?>calendar/">Calendar</a></li> 
 					<li><a href="<?php echo $config->urls->root; ?>sponsors/">Sponsors</a></li> 
-					<li><a href="<?php echo $config->urls->root; ?>first/">FIRST</a></li>  
 					
 				</ul>
 			</nav>
@@ -35,7 +34,7 @@
 			</form>
 			
 			<section>
-				<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team and non-profit based out of Robbinsville High School, NJ.
+				<p>FRC Team 2590, Nemesis, is an award winning <a href="<?php echo $config->urls->root; ?>first/">FIRST Robotics</a> team and non-profit based out of Robbinsville High School, NJ.
 				</p>
 				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
 				</p>
